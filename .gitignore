@@ -1,0 +1,15 @@
+
+# System
+.DS_Store
+
+# Development
+.sass-cache
+config.php
+
+# WordPress
+.htaccess
+wp-content/uploads/
+wp-contend/upgrade/*
+wp-content/advanced-cache.php
+wp-content/cache/*
+wp-content/cache/supercache/*
