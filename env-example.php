@@ -70,18 +70,18 @@ $env['production'] = array(
     'shared_dir' => '',
 
     /**
+     * Composer directory: the path to the directory to run composer install on
+     * e.g. /var/www/public_html/wp-content/themes/theme-name
+     */
+    'composer_dir' => ''
+
+    /**
      * Shared assets: array of files to share between releases
      * e.g. ['.htaccess', 'env.php', 'wp-content/uploads']
      *
      * The path to the asset in the shared directory must match the path set here
      */
-    'shared_assets' => '',
-
-    /**
-     * Composer directory: the path to the directory to run composer install on
-     * e.g. /var/www/public_html/wp-content/themes/theme-name
-     */
-    'composer_dir' => ''
+    'shared_assets' => [],
 );
 
 return $env;
