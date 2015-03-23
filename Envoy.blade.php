@@ -40,13 +40,13 @@ $release = date('YmdHis');
 @endtask
 
 @task('run_composer')
-    cd {{ $composer_dir }};
+    cd {{ $release_dir }}/{{ $release }}/{{ $composer_dir }};
     composer install --prefer-dist;
 @endtask
 
 @task('update_permissions')
     cd {{ $release_dir }};
-    chgrp -R www-data {{ $release }};
+    {{-- chgrp -R www-data {{ $release }}; --}}
     chmod -R ug+rwx {{ $release }};
 @endtask
 
@@ -54,11 +54,11 @@ $release = date('YmdHis');
     @foreach($shared_assets as $asset)
         rm -rf {{ $release_dir }}/{{ $release }}/{{ $asset }};
         ln -nfs {{ $shared_dir }}/{{ $asset }} {{ $release_dir }}/{{ $release }}/{{ $asset }};
-        chgrp -h www-data {{ $release_dir }}/{{ $release }}/{{ $asset }};
+        {{-- chgrp -h www-data {{ $release_dir }}/{{ $release }}/{{ $asset }}; --}}
     @endforeach
 @endtask
 
 @task('update_app_symlink')
     ln -nfs {{ $release_dir }}/{{ $release }} {{ $app_dir }};
-    chgrp -h www-data {{ $app_dir }};
+    {{-- chgrp -h www-data {{ $app_dir }}; --}}
 @endtask
