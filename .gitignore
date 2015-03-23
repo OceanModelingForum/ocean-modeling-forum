@@ -4,7 +4,7 @@
 
 # Development
 .sass-cache
-config.php
+env.php
 
 # WordPress
 .htaccess
