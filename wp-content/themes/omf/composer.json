@@ -1,11 +1,5 @@
 {
     "require": {
-        "elcontraption/wp-theme-config": "0.2.0.x-dev"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "dev/elcontraption/wp-theme-config"
-        }
-    ]
+        "elcontraption/wp-theme-config": "0.2.*"
+    }
 }

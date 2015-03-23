@@ -4,15 +4,21 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9798c4c2063ec87278f085cc1361315b",
+    "hash": "1051903f3d1530c6792800394fd6d5e4",
     "packages": [
         {
             "name": "elcontraption/wp-theme-config",
-            "version": "0.2.0.x-dev",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
-                "url": "dev/elcontraption/wp-theme-config",
+                "url": "https://github.com/elcontraption/wp-theme-config.git",
                 "reference": "5666c36350727c6ed8e2cf5252e36509006a7346"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elcontraption/wp-theme-config/zipball/5666c36350727c6ed8e2cf5252e36509006a7346",
+                "reference": "5666c36350727c6ed8e2cf5252e36509006a7346",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
@@ -23,6 +29,7 @@
                     "ElContraption\\WpThemeConfig\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Darin Reid",
@@ -38,9 +45,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "elcontraption/wp-theme-config": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
