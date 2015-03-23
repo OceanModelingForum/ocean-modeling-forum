@@ -76,6 +76,12 @@ $env['production'] = array(
     'composer_dir' => '',
 
     /**
+     * Composer executable: the path to the composer executable if not installed globally
+     * e.g. /bin/composer.phar
+     */
+    'composer_executable' => '',
+
+    /**
      * Shared assets: array of files to share between releases
      * e.g. ['.htaccess', 'env.php', 'wp-content/uploads']
      *

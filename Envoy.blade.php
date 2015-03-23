@@ -18,6 +18,7 @@ $app_dir        = $production['app_dir'];
 $shared_dir     = $production['shared_dir'];
 $shared_assets  = $production['shared_assets'];
 $composer_dir   = $production['composer_dir'];
+$composer_executable = $production['composer_executable'];
 $release = date('YmdHis');
 ?>
 
@@ -41,7 +42,7 @@ $release = date('YmdHis');
 
 @task('run_composer')
     cd {{ $release_dir }}/{{ $release }}/{{ $composer_dir }};
-    composer install --prefer-dist;
+    {{ $composer_executable }} install --prefer-dist;
 @endtask
 
 @task('update_permissions')
