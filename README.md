@@ -1,7 +1,7 @@
 # Ocean Modeling Forum
 The Ocean Modeling Forum website.
 
-Author: [Darin Reid](http://elcontraption.com/);
+Author: [Darin Reid](http://elcontraption.com/)
 
 1. [Development](#development)
 
@@ -16,7 +16,7 @@ Make a copy of `env-example.php` and update the variables within to match your l
 cp env-example.php env.php
 ```
 
-Make sure you generate new WordPress auth keys within that file.
+** Important**: Make sure you generate new WordPress auth keys within that file.
 
 ### 3. Install theme dependencies
 
