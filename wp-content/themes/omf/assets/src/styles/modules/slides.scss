@@ -1,0 +1,33 @@
+
+.Slides {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.Slides-container {
+    height: 300%;
+}
+
+.Slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: table;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.9);
+    //height: 33.3333%;
+    border-bottom: 1px solid #444;
+}
+
+.Slide-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.Slide-title {
+
+}

@@ -1,0 +1,48 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "9798c4c2063ec87278f085cc1361315b",
+    "packages": [
+        {
+            "name": "elcontraption/wp-theme-config",
+            "version": "0.2.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "dev/elcontraption/wp-theme-config",
+                "reference": "5666c36350727c6ed8e2cf5252e36509006a7346"
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ElContraption\\WpThemeConfig\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Darin Reid",
+                    "email": "darinreid@gmail.com",
+                    "homepage": "http://elcontraption.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Sensible configuration for themeing WordPress.",
+            "time": "2015-03-23 22:06:29"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "elcontraption/wp-theme-config": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

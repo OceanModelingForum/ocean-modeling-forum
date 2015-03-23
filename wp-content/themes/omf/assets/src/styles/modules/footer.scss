@@ -1,0 +1,29 @@
+
+.Footer {
+    @extend .antialiased;
+    padding: 1rem 0;
+    background: $blue-darkest;
+    color: #eee;
+}
+
+.Footer-menu {
+
+    li {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    a {
+        @include font-size(16);
+        text-decoration: none;
+        color: #eee;
+        font-weight: 500;
+    }
+}
+
+.Footer-back-to-top {
+    @include font-size(16);
+    text-decoration: none;
+    color: #eee;
+    font-weight: 500;
+}

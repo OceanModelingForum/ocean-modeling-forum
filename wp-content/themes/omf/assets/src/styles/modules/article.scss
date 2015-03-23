@@ -1,0 +1,26 @@
+
+.Article {
+    padding: 2rem 0;
+
+    .Banner & {
+        padding-top: 1rem;
+    }
+}
+
+.Article-header {
+
+}
+
+.Article-title {
+    display: none;
+    @include serif;
+    @include font-size(36);
+}
+
+.Article-body {
+    color: $blue-text;
+
+    .Banner & {
+        color: #fff;
+    }
+}

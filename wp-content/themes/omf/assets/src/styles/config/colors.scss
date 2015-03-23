@@ -1,0 +1,50 @@
+
+/*
+|--------------------------------------------------------------------------
+| Color palette
+|--------------------------------------------------------------------------
+*/
+
+$text: #222;
+$text-light: #888;
+$text-extra-light: #aaa;
+$text-medium: #666;
+
+$blue: #1565C0;
+$blue-light: lighten($blue, 40%);
+$blue-dark: darken($blue, 20%);
+$blue-darker: #222831;
+$blue-deep: darken($blue, 30%);
+$blue-darkest: #13171B;
+$blue-text: desaturate(darken($blue, 15%), 55%);
+$blue-faint: #DAE8F8;
+$blue-very-light: #B7C2D0;
+
+$text-blue: $blue-text;
+
+$red: #E53935;
+
+$color-accent: $blue;
+
+$link: $red;
+$link-active: $blue;
+
+.modal-background {
+    background: $blue-deep;
+    background: rgba(13,44,95,0.9);
+}
+
+%color-bg {
+    @extend .antialiased;
+    color: #fff;
+}
+
+.color-bg-blue {
+    @extend %color-bg;
+    background: $blue;
+}
+
+.color-bg-red {
+    @extend %color-bg;
+    background: $red;
+}

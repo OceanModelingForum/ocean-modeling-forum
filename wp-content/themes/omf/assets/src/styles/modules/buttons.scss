@@ -1,0 +1,17 @@
+
+.Button {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.Button--red {
+    @extend .antialiased;
+    background: $blue-light;
+    color: #fff;
+
+    &:hover {
+        background: $red;
+        color: #fff !important;
+    }
+}

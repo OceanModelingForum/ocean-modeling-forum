@@ -1,0 +1,34 @@
+
+.Partners {
+
+}
+
+.Partner {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.Partner-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.Partner-image {
+
+    img {
+        display: block;
+    }
+
+}
+
+.Partner-header {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.Partner-title {
+    @include font-size(16);
+    line-height: 1.3;
+    font-weight: 600;
+}

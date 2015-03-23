@@ -1,0 +1,31 @@
+
+.Cards {
+    margin: 2rem 0 0;
+}
+
+.Card {
+    margin: 1rem 0;
+    @include bp(min-width, $bp-2) {
+        margin: 1rem;
+    }
+}
+
+.Card-link {
+    display: block;
+    text-decoration: none;
+    border-radius: $border-radius;
+    overflow: hidden;
+    transition: box-shadow 0.15s ease;
+
+    &:hover {
+        box-shadow: $box-shadow;
+    }
+}
+
+.Card-header {
+
+}
+
+.Card-title {
+
+}

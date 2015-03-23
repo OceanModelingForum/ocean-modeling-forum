@@ -1,0 +1,38 @@
+
+.Section {
+    overflow: hidden;
+}
+
+.Section--dark {
+    @extend .antialiased;
+    color: #fff;
+}
+
+.Section-supertitle {
+
+}
+
+.Section-title {
+    @include font-size(30);
+    font-weight: 400;
+
+    @include bp-desktop {
+        @include font-size(36);
+    }
+}
+
+.Section-header + .Section-content {
+    padding-top: 0.5rem;
+
+    @include bp-desktop {
+        padding-top: 1rem;
+    }
+}
+
+.Section-content {
+    padding: 1rem 0;
+
+    @include bp-desktop {
+        padding: 2rem 0;
+    }
+}

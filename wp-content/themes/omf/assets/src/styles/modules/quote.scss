@@ -1,0 +1,27 @@
+
+.Quote {
+    position: relative;
+    padding: 4rem 0;
+    //@include serif;
+    @include font-size(36);
+    font-weight: 400;
+
+    p:first-of-type {
+        position: relative;
+    }
+
+    p:first-of-type:before {
+        position: absolute;
+        left: -0.5em;
+        content: "“";
+    }
+
+    p:last-of-type:after {
+        content: "”";
+    }
+}
+
+.Quote-author {
+    @include caps;
+    font-style: normal;
+}

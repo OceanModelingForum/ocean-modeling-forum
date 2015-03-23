@@ -1,0 +1,11 @@
+
+.Icon-list {
+    
+    li {
+        @include font-size(16);
+        color: $text-medium;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+}

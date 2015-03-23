@@ -1,0 +1,41 @@
+
+.Events {
+
+}
+
+.Event {
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    
+    .Block--image & {
+        color: #fff;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+}
+
+.Event-header {
+    padding: 2rem 0;
+}
+
+.Event-date {
+    @include font-size(18);
+    font-weight: 600;
+}
+
+.Event-location {
+    @include font-size(18);
+    line-height: 1;
+}
+
+.Event-title {
+    @include font-size(56);
+    line-height: 1;
+    font-weight: 100;
+}
+
+.Event-body {
+    
+}

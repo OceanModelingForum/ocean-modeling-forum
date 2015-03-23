@@ -1,0 +1,25 @@
+
+.Hero {
+    @extend .antialiased;
+    padding: 6rem 0;
+    background-image: linear-gradient(to top, $blue, lighten($blue, 12%));
+    //@include serif;
+    @include font-size(48);
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    // background: {
+    //     image: url(/assets/images/wave-bg.jpg);
+    //     repeat: no-repeat;
+    //     position: center;
+    //     size: cover;
+    // }
+
+    :first-child {
+        margin-top: 0;
+    }
+
+    :last-child {
+        margin-bottom: 0;
+    }
+}

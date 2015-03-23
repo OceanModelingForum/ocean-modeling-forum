@@ -1,0 +1,66 @@
+
+.Buckets {
+
+}
+
+.Bucket {
+    text-align: center;
+    background: {
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+    }
+
+    &:hover {
+        background-color: rgba(0,0,0,0.25);
+    }
+}
+
+.Bucket-link {
+    display: block;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+
+    .Buckets--rounded & {
+        border-radius: $border-radius;
+    }
+}
+
+.Bucket-icon {
+
+    svg {
+        width: 4rem;
+        height: 4rem;
+        fill: $text;
+        fill: rgba(0,0,0,0.75);
+    }
+
+    .Block--dark & svg {
+        fill: #fff;
+        fill: rgba(255,255,255,0.75);
+    }
+
+}
+
+.Bucket-header {
+
+}
+
+.Bucket-supertitle {
+    @include large-caps;
+}
+
+.Bucket-title {
+    @include font-size(20);
+    font-weight: 600;
+}
+
+.Bucket-meta {
+    @include font-size(18);
+    line-height: 1.3;
+
+    small {
+        @include caps;
+    }
+}

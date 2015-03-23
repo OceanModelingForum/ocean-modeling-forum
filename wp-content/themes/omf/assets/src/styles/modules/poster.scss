@@ -1,0 +1,75 @@
+
+.Poster {
+    @extend .antialiased;
+    position: relative;
+    padding: 16rem 0;
+    //box-shadow: 0 0 20px 4px rgba(0,0,0,0.5);
+    //filter: grayscale(100%);
+    background: {
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+        color: #222;
+    }
+
+    &:before {
+        display: block;
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to top, $blue, #1DB5B1);
+        opacity: 0.65;
+    }
+
+    &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+    }
+}
+
+.Poster-header {
+    position: relative;
+    z-index: 1;
+}
+
+.Poster-supertitle {
+    @include caps;
+    color: rgba(255,255,255,0.75);
+}
+
+.Poster-title {
+    @include font-size(64);
+    line-height: 1;
+    font-weight: 600;
+    color: #fff;
+}
+
+.Poster-lede {
+    position: relative;
+    z-index: 1;
+    //margin: 2rem 0;
+    padding: 2rem 0;
+    @include serif;
+    @include font-size(40);
+    line-height: 1.4;
+    font-weight: 100;
+    color: #fff;
+    //text-align: center;
+    //background: rgba(0,0,0,0.25);
+}
+
+.Poster-body {
+    position: relative;
+    z-index: 1;
+
+}

@@ -1,0 +1,50 @@
+
+.Bios {
+    height: 0;
+    transition: all 0.25s ease;
+
+    &.Bios--active {
+        height: auto;
+    }
+}
+
+.Bio {
+    display: none;
+
+    &.Bio--active {
+        display: block;
+    }
+}
+
+.Bio-image {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 100%;
+    border-radius: 50%;
+    background: {
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+    }
+}
+
+.Bio-header {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.Bio-name {
+    font-weight: 600;
+}
+
+.Bio-title {
+    @include font-size(18);
+}
+
+.Bio-org {
+    @include font-size(18);
+}
+
+.Bio-content {
+    @include font-size(18);
+}

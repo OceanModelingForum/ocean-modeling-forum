@@ -1,0 +1,101 @@
+
+.Menu {
+    position: fixed;
+    z-index: 999;
+    top: -100%;
+    right: 0;
+    left: 0;
+    padding: 4rem 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: $blue-deep;
+    background: rgba(4, 38, 70, 0.95);
+    transition: opacity 0.15s;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    /**
+     * Transition state: re-position
+     */
+    .Menu--transition & {
+        top: 0;
+    }
+
+    /**
+     * Active state: make visible
+     */
+    .Menu--active & {
+        top: 0;
+        opacity: 1;
+    }
+
+    html.csstransforms3d & {
+        top: 0;
+        transform: translate3d(0,-100%,0);
+    }
+
+    html.csstransforms3d .Menu--transition & {
+        transform: translate3d(0,0,0);
+    }
+
+    html.csstransforms3d .Menu--active & {
+        transform: translate3d(0,0,0);
+    }
+}
+
+.Menu-content {
+    @extend .antialiased;
+    display: table;
+    width: 100%;
+    height: 100%;
+    transition: all 0.25s ease;
+}
+
+.Menu-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.Menu-items {
+
+    a {
+        display: block;
+        padding: 0.5rem 0;
+        text-decoration: none;
+        color: #fff;
+        @include font-size(30);
+        line-height: 1;
+        font-weight: 100;
+
+        @include bp (min-width, $bp-2) {
+            @include font-size(72);
+        }
+    }
+
+    a:hover {
+        background: $blue-deep;
+        color: #fff !important;
+    }
+
+}
+
+.Menu-footer {
+    padding: 2rem 0 0;
+}
+
+.Menu-title {
+    @include small-caps;
+    color: #aaa;
+}
+
+.Menu-small {
+
+    a {
+        display: block;
+        padding: 0;
+        text-decoration: none;
+        color: #fff;
+    }
+
+}

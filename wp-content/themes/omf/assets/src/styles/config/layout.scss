@@ -1,0 +1,137 @@
+
+/*
+|--------------------------------------------------------------------------
+| General layout
+|--------------------------------------------------------------------------
+*/
+
+html,
+body {
+    height: 100%;
+}
+
+.Container {
+    height: 100%;
+
+    .Menu--active & {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+    }
+}
+
+/**
+ * Disable scrolling when menu is active
+ */
+body.Menu--active {
+    overflow: hidden;
+}
+
+.u-container {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 50rem;
+}
+
+.u-container--medium {
+    max-width: 40rem;
+}
+
+.u-container--small {
+    max-width: 30rem;
+}
+
+.u-container--text {
+    max-width: 30rem;
+}
+
+.u-pad {
+    padding: 1rem;
+
+    @include bp(min-width, $bp-2) {
+        padding: 2rem;
+    }
+
+    @include bp(min-width, $bp-3) {
+        padding: 3rem;
+    }
+}
+
+.u-pad--right {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.u-pad--left {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.u-pad--top {
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.u-pad--bottom {
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.Grid--collapsable > .Grid-cell {
+
+    @include bp(max-width, $bp-2 - 1) {
+        display: block !important;
+        width: 100% !important;
+    }
+
+}
+
+.Grid--padded {
+    margin: 0 -1rem;
+
+    @include bp-desktop {
+        margin: 0 -2rem;
+    }
+}
+
+.Grid--padded > .Grid-cell {
+    padding: 0 1rem;
+
+    @include bp-desktop {
+        padding: 0 2rem;
+    }
+}
+
+.Grid-cell--background {
+    background: {
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+    }
+}
+
+.Grid-cell--relative {
+    position: relative;
+}
+
+.u-align--right {
+    text-align: right;
+}
+
+.u-align--middle {
+    vertical-align: middle;
+}
+
+.u-align--center {
+    text-align: center;
+}
+
+$border-radius: 3px;
+$box-shadow: 0 0 10px 0px rgba(0,0,0,0.25);

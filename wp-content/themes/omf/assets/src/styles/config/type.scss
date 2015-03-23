@@ -1,0 +1,74 @@
+
+/*
+|--------------------------------------------------------------------------
+| Type settings
+|--------------------------------------------------------------------------
+*/
+
+$base-font-size: 19;
+$base-line-height: 1.5;
+
+@mixin sans {
+    font: {
+        family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        weight: 400;
+    }
+}
+
+@mixin serif {
+    font: {
+        family: "freight-text-pro", Georgia, serif;
+        weight: 400;
+    }
+}
+
+@mixin caps {
+    @include sans;
+    @include font-size(16);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+@mixin small-caps {
+    @include caps;
+    @include font-size(14);
+}
+
+@mixin large-caps {
+    @include caps;
+    @include font-size(16);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+html {
+    font-size: percentage($base-font-size / 16);
+    line-height: $base-line-height;
+}
+
+body {
+    @include sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $blue-text;
+}
+
+a {
+    color: $link;
+}
+
+a:hover {
+    color: $link-active !important;
+}
+
+.antialiased {
+    -webkit-font-smoothing: antialiased;
+}
+
+.Text-container {
+
+    @include bp-desktop {
+        max-width: 30rem;
+    }
+}

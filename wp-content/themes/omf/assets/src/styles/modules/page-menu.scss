@@ -1,0 +1,50 @@
+
+.Page-menu {
+    @extend .antialiased;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    //background: #1d1d1d;
+    //background-image: linear-gradient(to top, darken($blue-dark, 5%), $blue-dark);
+    //text-align: center;
+    
+    ul {
+        display: table;
+        width: 100%;
+    }
+
+    li {
+        display: table-cell;
+        padding: 0 1px;
+        //border-left: 2px solid rgba(255,255,255,0.15);
+    }
+
+    li:last-child {
+        //border-right: 2px solid rgba(255,255,255,0.15);
+    }
+
+    a {
+        display: block;
+        padding: 1rem 2rem 0.5rem;
+        text-decoration: none;
+        @include caps;
+        color: #fff;
+        text-align: center;
+        font-weight: 500;
+        background: #1d1d1d;
+        //background: rgba(0,0,0,0.5);
+    }
+
+    span {
+        display: block;
+    }
+
+    svg {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: #fff;
+    }
+}

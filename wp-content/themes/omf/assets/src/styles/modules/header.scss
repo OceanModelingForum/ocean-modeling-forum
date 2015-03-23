@@ -1,0 +1,146 @@
+
+.Cover-images {
+    position: relative;
+    height: 100%;
+}
+
+.Header {
+    @extend .antialiased;
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0.75rem 1rem;
+    color: #fff;
+
+    @include bp (min-width, $bp-2) {
+        padding: 0.75rem 2rem;
+    }
+
+    .Menu--active & {
+        //background: #09213A;
+    }
+}
+
+.Header-logo {
+    display: inline-block;
+    @include font-size(16);
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+
+    @include bp (min-width, $bp-2) {
+        @include font-size(24);
+    }
+
+    &:hover {
+        color: #fff !important;
+    }
+
+    i {
+        font-style: normal;
+        font-weight: 900;
+    }
+
+    i:after {
+        content: " | ";
+        font-weight: 500;
+        color: rgba(255,255,255,0.5);
+    }
+}
+
+.Header-menu-button {
+    outline: none !important;
+}
+
+.Header-menu-button-label {
+    display: none;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+    @include small-caps;
+    color: #fff;
+
+    @include bp (min-width, $bp-2) {
+        display: inline-block;
+    }
+}
+
+.Header-menu-button-border {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 9px 4px 0;
+    width: 30px;
+    height: 28px;
+    border: 2px solid #fff;
+}
+
+.Header-menu-button-line {
+    margin: 0 auto;
+    position: relative;
+    height: 2px;
+    background: #fff;
+    transition: all 0.15s ease;
+}
+
+.Header-menu-button-line--top {
+    transform: translate3d(0,-4px,0);
+}
+
+.Header-menu-button-line--middle {
+}
+
+.Header-menu-button-line--bottom {
+    transform: translate3d(0,4px,0);
+}
+
+.Header-menu-button--active {
+
+    .Header-menu-button-line--top {
+        animation: {
+            name: menuButtonTop;
+            timing-function: ease;
+            duration: 0.25s;
+            direction: normal;
+            iteration-count: 1;
+            fill-mode: both;
+        }
+    }
+
+    .Header-menu-button-line--middle {
+       opacity: 0;
+    }
+
+    .Header-menu-button-line--bottom {
+        animation: {
+            name: menuButtonBottom;
+            timing-function: ease;
+            duration: 0.25s;
+            direction: normal;
+            iteration-count: 1;
+            fill-mode: both;
+        }
+    }
+
+}
+
+@keyframes menuButtonTop {
+    50% {
+        transform: translate3d(0,2px,0) rotate(0deg);
+    }
+    100% {
+        transform: translate3d(0,2px,0) rotate(45deg);
+    }
+}
+
+@keyframes menuButtonBottom {
+    0% {
+        transform: translate3d(0,4px,0) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(0,-2px,0) rotate(0deg);
+    }
+    100% {
+        transform: translate3d(0,-2px,0) rotate(-45deg);
+    }
+}
