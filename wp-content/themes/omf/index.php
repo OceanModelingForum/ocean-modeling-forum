@@ -13,7 +13,7 @@
 
     <title><?php wp_title(); ?></title>
 
-    <?php wp_head(); ?>
+    <link rel="stylesheet" href="<?php echo get_bloginfo('url'); ?>/wp-content/themes/omf/assets/dist/styles/holding.css">
 
     <script src="//use.typekit.net/ycr5cje.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
@@ -60,6 +60,5 @@
 
     </div>
 
-    <?php wp_footer(); ?>
 </body>
 </html>
