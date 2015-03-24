@@ -13,7 +13,9 @@
 
     <title><?php wp_title(); ?></title>
 
-    <link rel="stylesheet" href="<?php echo get_bloginfo('url'); ?>/wp-content/themes/omf/assets/dist/styles/holding.css">
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/scripts/modernizr.js"></script>
+
+    <link rel="stylesheet" href="<?php echo get_bloginfo('url'); ?>/wp-content/themes/omf/assets/dist/styles/style.css">
 
     <script src="//use.typekit.net/ycr5cje.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>

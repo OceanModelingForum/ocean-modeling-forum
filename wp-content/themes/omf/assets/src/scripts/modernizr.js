@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.0.0-alpha.3
- * Build http://v3.modernizr.com/download/#-csstransforms-csstransforms3d-csstransitions-flexbox-dontmin
+ * Build http://v3.modernizr.com/download/#-cssanimations-csstransforms-csstransforms3d-csstransitions-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -204,7 +204,9 @@
 }
 !*/
 
-  Modernizr.addTest('supports', 'CSS' in window && 'supports' in window.CSS);
+  var newSyntax = 'CSS' in window && 'supports' in window.CSS;
+  var oldSyntax = 'supportsCSS' in window;
+  Modernizr.addTest('supports', newSyntax || oldSyntax);
 
 
   var createElement = function() {
@@ -304,7 +306,7 @@
   //   erik.eae.net/archives/2008/03/10/21.48.10/
 
   // More here: github.com/Modernizr/Modernizr/issues/issue/21
-  var omPrefixes = 'Webkit Moz O ms';
+  var omPrefixes = 'Moz O ms Webkit';
 
 
   var cssomPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.split(' ') : []);
@@ -582,6 +584,26 @@
 
 /*!
 {
+  "name": "CSS Animations",
+  "property": "cssanimations",
+  "caniuse": "css-animation",
+  "polyfills": ["transformie", "csssandpaper"],
+  "tags": ["css"],
+  "warnings": ["Android < 4 will pass this test, but can only animate a single property at a time"],
+  "notes": [{
+    "name" : "Article: 'Dispelling the Android CSS animation myths'",
+    "href": "http://goo.gl/OGw5Gm"
+  }]
+}
+!*/
+/* DOC
+Detects whether or not elements can be animated using CSS
+*/
+
+  Modernizr.addTest('cssanimations', testAllProps('animationName', 'a', true));
+
+/*!
+{
   "name": "CSS Transforms",
   "property": "csstransforms",
   "caniuse": "transforms2d",
@@ -648,27 +670,6 @@
 !*/
 
   Modernizr.addTest('csstransitions', testAllProps('transition', 'all', true));
-
-/*!
-{
-  "name": "Flexbox",
-  "property": "flexbox",
-  "caniuse": "flexbox",
-  "tags": ["css"],
-  "notes": [{
-    "name": "The _new_ flexbox",
-    "href": "http://dev.w3.org/csswg/css3-flexbox"
-  }],
-  "warnings": [
-    "A `true` result for this detect does not imply that the `flex-wrap` property is supported; see the `flexwrap` detect."
-  ]
-}
-!*/
-/* DOC
-Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows easy manipulation of layout order and sizing within a container.
-*/
-
-  Modernizr.addTest('flexbox', testAllProps('flexBasis', '1px', true));
 
 
   // Run each test

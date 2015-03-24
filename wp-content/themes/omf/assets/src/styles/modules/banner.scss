@@ -2,9 +2,11 @@
 .Banner {
     @extend .antialiased;
     position: relative;
+    display: table;
+    width: 100%;
     min-height: 100%;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     text-decoration: none;
     background: {
         color: $blue-dark;
@@ -14,71 +16,14 @@
     }
 }
 
-.Banner-footer {
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 0 0 2rem;
-    text-align: center;
-}
-
-.Banner-arrow {
-    text-decoration: none;
-    color: #fff;
-
-    &:hover {
-        color: #fff !important;
-    }
-}
-
-.Banner-arrow-supertitle {
-    @include caps;
-}
-
-.Banner-arrow-title {
-    @include font-size(16);
-
-    @include bp (min-width, $bp-2) {
-        @include font-size(20);
-    }
-}
-
-.Banner-arrow-icon {
-    transform: translate3d(0,0,0);
-    transition: transform 0.25s ease;
-    animation: {
-        name: bannerArrow;
-        timing-function: ease;
-        duration: 1s;
-        direction: normal;
-        iteration-count: 3;
-        fill-mode: both;
-    }
-
-    svg {
-        width: 1.5rem;
-        height: 1.5rem;
-        fill: #fff;
-
-        @include bp (min-width, $bp-2) {
-            width: 2rem;
-            height: 2rem;
-        }
-    }
-
-    .Banner-arrow:hover & {
-        transform: translate3d(0,4px,0);
-    }
-}
-
 .Banner-header {
     position: relative;
     z-index: 1;
-    display: flex;
+    display: table-cell;
+    vertical-align: middle;
+    /* display: flex;
     flex: 1;
-    align-items: flex-end;
+    align-items: flex-end; */
 
     .Banner--center & {
         align-items: center;
@@ -166,7 +111,7 @@
 .Banner-message {
     margin: 1rem 0 0;
     text-align: center;
-    opacity: 0;
+    /* opacity: 0; */
     animation: {
         name: bannerMessage;
         timing-function: ease;
@@ -177,8 +122,71 @@
         fill-mode: both;
     }
 
+    html.cssanimations & {
+        opacity: 0;
+    }
+
     @include bp (min-width, $bp-2) {
         margin: 4rem 0 0;
+    }
+}
+
+.Banner-footer {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 0 2rem;
+    text-align: center;
+}
+
+.Banner-arrow {
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+        color: #fff !important;
+    }
+}
+
+.Banner-arrow-supertitle {
+    @include caps;
+}
+
+.Banner-arrow-title {
+    @include font-size(16);
+
+    @include bp (min-width, $bp-2) {
+        @include font-size(20);
+    }
+}
+
+.Banner-arrow-icon {
+    transform: translate3d(0,0,0);
+    transition: transform 0.25s ease;
+    animation: {
+        name: bannerArrow;
+        timing-function: ease;
+        duration: 1s;
+        direction: normal;
+        iteration-count: 3;
+        fill-mode: both;
+    }
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: #fff;
+
+        @include bp (min-width, $bp-2) {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    .Banner-arrow:hover & {
+        transform: translate3d(0,4px,0);
     }
 }
 
