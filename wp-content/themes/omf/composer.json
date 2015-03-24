@@ -1,5 +1,6 @@
 {
     "require": {
+        "elcontraption/wp-post-type": "0.1.*",
         "elcontraption/wp-theme-config": "0.2.*"
     }
 }

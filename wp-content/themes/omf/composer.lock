@@ -4,8 +4,46 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1051903f3d1530c6792800394fd6d5e4",
+    "hash": "9d87996b2955a416ce24bee5f9e3235a",
     "packages": [
+        {
+            "name": "elcontraption/wp-post-type",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elcontraption/wp-post-type.git",
+                "reference": "a7c82c4b5b130f12f68deff542253dfc8ebb143f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elcontraption/wp-post-type/zipball/a7c82c4b5b130f12f68deff542253dfc8ebb143f",
+                "reference": "a7c82c4b5b130f12f68deff542253dfc8ebb143f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WpPostType\\": "lib/WpPostType"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Darin Reid",
+                    "email": "darin@elcontraption.com",
+                    "homepage": "http://elcontraption.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A WordPress custom post type creator class.",
+            "time": "2015-03-19 22:54:18"
+        },
         {
             "name": "elcontraption/wp-theme-config",
             "version": "0.2.0",
