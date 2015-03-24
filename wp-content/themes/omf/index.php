@@ -20,8 +20,6 @@
 </head>
 <body>
 
-    <?php get_template_part('templates/utility/svgdefs.svg'); ?>
-
     <header class="Header" role="banner">
 
         <div class="Grid">
