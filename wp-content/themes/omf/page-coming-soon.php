@@ -1,12 +1,4 @@
-<?php
-/**
- * A temporary holding home page
- *
- *
- *
- * 
- */
-?><!DOCTYPE html>
+<!doctype html>
 <html class="no-js">
 <head>
     <meta charset="utf-8">
@@ -15,9 +7,9 @@
 
     <title><?php wp_title(); ?></title>
 
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/scripts/modernizr.js"></script>
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dst/scripts/modernizr.js"></script>
 
-    <link rel="stylesheet" href="<?php echo get_bloginfo('url'); ?>/wp-content/themes/omf/assets/dist/styles/style.css">
+    <link rel="stylesheet" href="<?php echo get_bloginfo('url'); ?>/wp-content/themes/omf/assets/dst/styles/style.css">
 
     <script src="//use.typekit.net/ycr5cje.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
@@ -40,7 +32,7 @@
 
     <div class="Container">
 
-        <section class="Banner Banner--center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/dist/images/backgrounds/waves.jpg');">
+        <section class="Banner Banner--center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/dst/images/backgrounds/waves.jpg');">
 
             <header class="Banner-header">
 

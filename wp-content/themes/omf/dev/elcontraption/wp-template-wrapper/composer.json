@@ -1,0 +1,19 @@
+{
+    "name": "elcontraption/wp-template-wrapper",
+    "authors": [
+        {
+            "name": "Darin Reid",
+            "email": "darinreid@gmail.com",
+            "homepage": "http://elcontraption.com/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ElContraption\\WpTemplateWrapper\\": "src/"
+        }
+    }
+}

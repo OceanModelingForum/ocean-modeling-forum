@@ -3,7 +3,11 @@
     overflow: hidden;
 }
 
-.Section--dark {
+.Section--text-dark {
+    color: $text;
+}
+
+.Section--text-light {
     @extend .antialiased;
     color: #fff;
 }

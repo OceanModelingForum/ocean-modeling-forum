@@ -18,7 +18,7 @@ return array(
 
         array(
             'handle'        => 'main',
-            'src'           => 'assets/dist/styles/style.css',
+            'src'           => 'assets/dst/styles/style.css',
             'deps'          => null,
             'ver'           => null,
             'media'         => null

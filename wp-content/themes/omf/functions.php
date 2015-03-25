@@ -13,6 +13,19 @@ require('vendor/autoload.php');
 $config = ThemeConfig::getInstance();
 
 /**
+ * Load helpers
+ * @var array
+ */
+$includes = array(
+    'lib/shortcodes.php',
+);
+
+foreach ($includes as $include)
+{
+    require_once($include);
+}
+
+/**
  * Redirect non-logged in users to the holding page.
  */
 add_action('template_redirect', function()
@@ -28,4 +41,5 @@ add_action('template_redirect', function()
     }
 
     wp_redirect(home_url('coming-soon'));
+    exit();
 });
