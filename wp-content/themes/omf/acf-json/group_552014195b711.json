@@ -61,8 +61,8 @@
                 },
                 {
                     "key": "field_55202276d7f29",
-                    "label": "Content",
-                    "name": "content",
+                    "label": "Type",
+                    "name": "type",
                     "prefix": "",
                     "type": "radio",
                     "instructions": "",
@@ -143,6 +143,30 @@
                     "layout": "horizontal"
                 },
                 {
+                    "key": "field_552059680d125",
+                    "label": "Background color (custom)",
+                    "name": "background_color_custom",
+                    "prefix": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_55204726ecf19",
+                                "operator": "==",
+                                "value": "custom"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": ""
+                },
+                {
                     "key": "field_5520476eecf1a",
                     "label": "Text color",
                     "name": "text_color",
@@ -165,6 +189,30 @@
                     "save_other_choice": 0,
                     "default_value": "dark",
                     "layout": "horizontal"
+                },
+                {
+                    "key": "field_5520598d0d126",
+                    "label": "Text color (custom)",
+                    "name": "text_color_custom",
+                    "prefix": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5520476eecf1a",
+                                "operator": "==",
+                                "value": "custom"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": ""
                 },
                 {
                     "key": "field_55201aea22580",
@@ -665,5 +713,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428182650
+    "modified": 1428183457
 }

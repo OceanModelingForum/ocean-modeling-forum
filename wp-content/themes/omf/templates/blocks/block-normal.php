@@ -8,7 +8,7 @@
 
 ?>
 
-<section class="Block Block--three-quarter Block--text-dark" id="<?php echo $id; ?>" style="<?php echo $styles; ?>">
+<section class="<?php echo $classes; ?>" id="<?php echo $id; ?>" style="<?php echo $styles; ?>">
 
     <div class="Block-header"></div>
 

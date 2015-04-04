@@ -28,8 +28,11 @@ class Block {
     {
         // Default arguments
         $this->args = wp_parse_args($args, array(
-            'content' => 'normal',
+            'id'            => '',
+            'type'          => 'normal',
+            'styles'        => '',
         ));
+
 
         // Default attributes
         // * all options must be declared here to be included style string *
@@ -37,33 +40,49 @@ class Block {
             'height'        => '',
             'background'    => '',
             'text'          => '',
-            'image_align'   => '',
-            'image_anchor'  => '',
         ));
     }
 
     /**
-     * Make style string from attributes
+     * Make class string from attributes
+     *
+     * @return string
      */
-    protected function getStyles()
+    protected function getClasses()
     {
-        $styles = array('Block');
+        $classes = array('Block');
 
         foreach ($this->attributes as $key => $value)
         {
             if ( ! $value) continue;
 
-            // Convert key-safe attribute names to style attributes
-            $key = str_replace('_', '-', $key);
-
-            // Style examples:
+            // Class examples:
             // Block--type-normal
             // Block--height-three-quarter
             // Block--background-light
-            $styles[] = 'Block--' . $key . '-' . $value;
+            $classes[] = 'Block--' . $key . '-' . $value;
         }
 
-        return implode(' ', $styles);
+        return implode(' ', $classes);
+    }
+
+    /**
+     * Make style string from styles array
+     *
+     * @return string
+     */
+    protected function getStyles()
+    {
+        if ( ! $this->args['styles']) return '';
+
+        $styles = '';
+
+        foreach ($this->args['styles'] as $key => $value)
+        {
+            $styles .= "$key: $value;";
+        }
+
+        return $styles;
     }
 
     /**
@@ -75,14 +94,13 @@ class Block {
     {
         extract($this->args);
 
+        $classes = $this->getClasses();
+
         $styles = $this->getStyles();
 
-        $template = locate_template('templates/blocks/block-' . $content . '.php');
+        $template = locate_template('templates/blocks/block-' . $type . '.php');
 
-        if ( ! $template)
-        {
-            return;
-        }
+        if ( ! $template) return false;
 
         include $template;
     }
