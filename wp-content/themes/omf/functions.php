@@ -50,11 +50,3 @@ add_action('template_redirect', function()
     wp_redirect(home_url('coming-soon'));
     exit();
 });
-
-$workingGroups = new PostType('working-group', array(), array(
-    'public' => true,
-    'rewrite' => array(
-        'slug' => 'working-groups',
-        'with_front' => false
-    )
-));

@@ -61,11 +61,11 @@
                 },
                 {
                     "key": "field_55202276d7f29",
-                    "label": "Block type",
-                    "name": "block_type",
+                    "label": "Content",
+                    "name": "content",
                     "prefix": "",
                     "type": "radio",
-                    "instructions": "What kind of content should this block display?",
+                    "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -74,7 +74,7 @@
                         "id": ""
                     },
                     "choices": {
-                        "normal": "Normal: image and text.",
+                        "normal": "Text and image",
                         "products": "Products: link to files related to the page content.",
                         "working_groups": "Working groups: show a listing of working groups.",
                         "schedule": "Schedule: show a schedule of events related to the page content."
@@ -115,6 +115,55 @@
                     "other_choice": 0,
                     "save_other_choice": 0,
                     "default_value": "false",
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_55204726ecf19",
+                    "label": "Background color",
+                    "name": "background_color",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "light": "Light",
+                        "medium": "Medium",
+                        "dark": "Dark",
+                        "custom": "Custom"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "light",
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_5520476eecf1a",
+                    "label": "Text color",
+                    "name": "text_color",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "light": "Light",
+                        "dark": "Dark",
+                        "custom": "Custom"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "dark",
                     "layout": "horizontal"
                 },
                 {
@@ -225,13 +274,13 @@
                     },
                     "choices": {
                         "top-left": "Top-left",
-                        "top": "Top-center",
+                        "top-center": "Top-center",
                         "top-right": "Top-right",
                         "center-left": "Center-left",
-                        "center": "Center",
+                        "center-center": "Center",
                         "center-right": "Center-right",
                         "bottom-left": "Bottom-left",
-                        "bottom": "Bottom-center",
+                        "bottom-center": "Bottom-center",
                         "bottom-right": "Bottom-right"
                     },
                     "default_value": {
@@ -409,6 +458,28 @@
                     "save_other_choice": 0,
                     "default_value": "left",
                     "layout": "horizontal"
+                },
+                {
+                    "key": "field_552045408c3f5",
+                    "label": "Headline",
+                    "name": "headline",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
                 },
                 {
                     "key": "field_55201a677e2eb",
@@ -594,5 +665,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428171040
+    "modified": 1428182650
 }

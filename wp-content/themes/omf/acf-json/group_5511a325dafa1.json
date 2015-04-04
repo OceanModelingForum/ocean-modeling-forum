@@ -1,0 +1,195 @@
+{
+    "key": "group_5511a325dafa1",
+    "title": "Banner",
+    "fields": [
+        {
+            "key": "field_5511a387a5f13",
+            "label": "Type",
+            "name": "type",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Normal: title and text are positioned to the bottom left.\r\nCentered: title and text are centered.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "normal": "Normal",
+                "centered": "Centered"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "normal",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_5511a3361e216",
+            "label": "Image",
+            "name": "image",
+            "prefix": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg, png"
+        },
+        {
+            "key": "field_55202c0242a42",
+            "label": "Image anchor",
+            "name": "image_anchor",
+            "prefix": "",
+            "type": "select",
+            "instructions": "Images will crop automatically to fit their container. Set the image anchor to best fit the image subject.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top-left": "Top-left",
+                "top-center": "Top-center",
+                "top-right": "Top-right",
+                "center-left": "Center-left",
+                "center-center": "Center",
+                "center-right": "Center-right",
+                "bottom-left": "Bottom-left",
+                "bottom-center": "Bottom-center",
+                "bottom-right": "Bottom-right"
+            },
+            "default_value": {
+                "center-center": "center-center"
+            },
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_5511a3e1a5f14",
+            "label": "Supertitle",
+            "name": "supertitle",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Shows above the title.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5511a387a5f13",
+                        "operator": "==",
+                        "value": "normal"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5511a3f6a5f15",
+            "label": "Title",
+            "name": "title",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5511a387a5f13",
+                        "operator": "==",
+                        "value": "normal"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5511a40ca5f16",
+            "label": "Text",
+            "name": "text",
+            "prefix": "",
+            "type": "text",
+            "instructions": "For 'normal' type banners, shows below the title. For 'centered' banners, shows within the window. Keep it short. You may emphasize text by [emphasis]wrapping it in emphasis tags[\/emphasis].",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 220,
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": -10,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1428171976
+}
