@@ -74,9 +74,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "normal": "Normal: text and image.",
-                        "products": "Products: link to files related to this page's content.",
-                        "working_groups": "Working groups: show a listing of working groups."
+                        "normal": "Normal: image and text.",
+                        "products": "Products: link to files related to the page content.",
+                        "working_groups": "Working groups: show a listing of working groups.",
+                        "schedule": "Schedule: show a schedule of events related to the page content."
                     },
                     "other_choice": 0,
                     "save_other_choice": 0,
@@ -269,6 +270,47 @@
                     "placement": "top"
                 },
                 {
+                    "key": "field_552026a85138e",
+                    "label": "Files",
+                    "name": "files",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": "",
+                    "max": "",
+                    "layout": "block",
+                    "button_label": "Add File",
+                    "sub_fields": [
+                        {
+                            "key": "field_552026bb5138f",
+                            "label": "File",
+                            "name": "file",
+                            "prefix": "",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ]
+                },
+                {
                     "key": "field_55201bec1772f",
                     "label": "Text",
                     "name": "_copy",
@@ -408,6 +450,129 @@
                     "tabs": "all",
                     "toolbar": "basic",
                     "media_upload": 0
+                },
+                {
+                    "key": "field_55202715af2c0",
+                    "label": "Working groups",
+                    "name": "",
+                    "prefix": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_55202276d7f29",
+                                "operator": "==",
+                                "value": "working_groups"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top"
+                },
+                {
+                    "key": "field_55202724af2c1",
+                    "label": "Selection",
+                    "name": "working_groups_selection",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "all": "All working groups",
+                        "select": "Select working groups"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "all",
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_55202826af2c3",
+                    "label": "Working groups",
+                    "name": "working_groups",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_55202724af2c1",
+                                "operator": "==",
+                                "value": "select"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": "",
+                    "max": "",
+                    "layout": "block",
+                    "button_label": "Add Working group",
+                    "sub_fields": [
+                        {
+                            "key": "field_55202832af2c4",
+                            "label": "Working group",
+                            "name": "working_group",
+                            "prefix": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "working-group"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        }
+                    ]
+                },
+                {
+                    "key": "field_552029148aa51",
+                    "label": "Schedule",
+                    "name": "",
+                    "prefix": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_55202276d7f29",
+                                "operator": "==",
+                                "value": "schedule"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top"
                 }
             ]
         }
@@ -429,5 +594,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428170352
+    "modified": 1428171040
 }
