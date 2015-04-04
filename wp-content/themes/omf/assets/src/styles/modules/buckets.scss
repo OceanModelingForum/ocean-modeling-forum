@@ -25,6 +25,10 @@
     .Buckets--rounded & {
         border-radius: $border-radius;
     }
+
+    .Bucket:hover & {
+        color: #fff !important;
+    }
 }
 
 .Bucket-icon {

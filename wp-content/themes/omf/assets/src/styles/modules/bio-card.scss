@@ -3,13 +3,17 @@
     display: block;
     padding: 0.5rem;
     text-decoration: none;
-    color: $text;
+    //color: $text;
     border-radius: $border-radius;
+}
+
+a.Bio-card {
+    color: inherit;
 }
 
 a.Bio-card:hover {
     background: rgba(0,0,0,0.15);
-    color: $text !important;
+    color: inherit !important;
 }
 
 .Bio-card-image {

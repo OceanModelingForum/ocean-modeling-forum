@@ -11,7 +11,7 @@ body {
 }
 
 body {
-    background: #ddd;
+
 }
 
 /**
@@ -24,19 +24,21 @@ body.Menu--active {
 .u-container {
     margin: 0 auto;
     padding: 0 1rem;
-    max-width: 50rem;
+    max-width: 1000px;
+
+    @include bp-desktop {
+        padding: 0 2rem;
+    }
 }
 
 .u-container--medium {
-    max-width: 40rem;
+    // max-width: 40rem;
+    max-width: 800px;
 }
 
 .u-container--small {
-    max-width: 30rem;
-}
-
-.u-container--text {
-    max-width: 30rem;
+    //max-width: 30rem;
+    max-width: 600px;
 }
 
 .u-pad {
@@ -88,7 +90,7 @@ body.Menu--active {
     margin: 0 -1rem;
 
     @include bp-desktop {
-        margin: 0 -2rem;
+        margin: 0 -1rem;
     }
 }
 
@@ -96,7 +98,7 @@ body.Menu--active {
     padding: 0 1rem;
 
     @include bp-desktop {
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
 }
 
@@ -112,8 +114,31 @@ body.Menu--active {
     position: relative;
 }
 
-.u-align--right {
-    text-align: right;
+.Grid--table {
+
+    @include bp-mobile {
+        display: block;
+    }
+
+}
+
+.Grid--table .Grid-cell {
+
+    @include bp-mobile {
+        display: block;
+    }
+}
+
+.u-float--right {
+    float: right;
+}
+
+.u-float--left {
+    float: left;
+}
+
+.u-align--bottom {
+    vertical-align: bottom;
 }
 
 .u-align--middle {
@@ -124,5 +149,25 @@ body.Menu--active {
     text-align: center;
 }
 
+.u-align--right {
+    text-align: right;
+}
+
 $border-radius: 3px;
-$box-shadow: 0 0 10px 0px rgba(0,0,0,0.25);
+$box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

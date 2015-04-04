@@ -1,6 +1,11 @@
 {
     "require": {
-        "elcontraption/wp-post-type": "0.1.*",
+        "elcontraption/wp-post-type": "0.2.*",
         "elcontraption/wp-theme-config": "0.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "OMF\\": "lib/OMF/"
+        }
     }
 }

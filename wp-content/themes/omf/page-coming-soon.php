@@ -32,11 +32,11 @@
 
     <div class="Container">
 
-        <section class="Banner Banner--center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/dst/images/backgrounds/waves.jpg');">
+        <div class="Section Section--full Section--text-light" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/dst/images/backgrounds/waves.jpg);">
 
-            <header class="Banner-header">
+            <div class="Section-content">
 
-                <div class="Banner-header-content">
+                <div class="Section-content-inner u-align--middle u-align--center">
 
                     <div class="u-container">
 
@@ -48,9 +48,9 @@
 
                 </div>
 
-            </header>
+            </div>
 
-        </section>
+        </div>
 
     </div>
 

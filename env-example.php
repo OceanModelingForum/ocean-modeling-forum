@@ -71,7 +71,8 @@ $env['production'] = array(
 
     /**
      * Composer directory: the path to the directory to run composer install on
-     * e.g. /var/www/public_html/wp-content/themes/theme-name
+     * relative to the current release (no leading slash)
+     * e.g. wp-content/themes/theme-name
      */
     'composer_dir' => '',
 

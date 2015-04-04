@@ -5,13 +5,55 @@
     line-height: 1;
 }
 
-.Button--red {
-    @extend .antialiased;
-    background: $blue-light;
-    color: #fff;
+.Button-title {
+    @include small-caps;
+    margin: 0 0 0.5rem;
+    color: $text-light;
 
-    &:hover {
-        background: $red;
-        color: #fff !important;
+    @include bp-desktop {
+        @include caps;
+    }
+
+    .Button--light & {
+        color: #fff;
+    }
+
+    .Button--dark & {
+        color: $text;
+    }
+}
+
+.Button-icon {
+    fill: $text-light;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    .Button--light & {
+        fill: #fff;
+        fill: rgba(255,255,255,0.5);
+
+        &:hover {
+            fill: #fff;
+        }
+    }
+
+    .Button--dark & {
+        fill: $text;
+
+        &:hover {
+            fill: $text;
+        }
+    }
+}
+
+.Button--arrow {
+
+    svg {
+        transform: translate3d(0,0,0);
+        transition: transform 0.25s ease;
+    }
+
+    &:hover svg {
+        transform: translateY(6px);
     }
 }

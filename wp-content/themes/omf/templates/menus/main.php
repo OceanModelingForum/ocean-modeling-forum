@@ -21,7 +21,41 @@ $main = array(
 
         <div class="Menu-center">
 
-            <?php wp_nav_menu($main); ?>
+            <ul class="Menu-items">
+
+                <li>
+                    <a href="{{root}}">
+                        <div class="u-container">
+                            Home
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{root}}#working-groups">
+                        <div class="u-container">
+                            Working Groups
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{root}}#summary">
+                        <div class="u-container">
+                            About OMF
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{root}}news">
+                        <div class="u-container">
+                            News
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
 
             <div class="Menu-footer">
 

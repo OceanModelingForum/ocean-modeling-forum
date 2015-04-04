@@ -1,0 +1,18 @@
+
+.List {
+
+}
+
+.List--alpha {
+
+    li {
+        list-style-type: lower-alpha;
+    }
+}
+
+.List--extra {
+
+    @include bp-desktop {
+        @include font-size(24);
+    }
+}

@@ -1,21 +1,31 @@
 <?php
 
+use \ElContraption\WpPostType\PostType;
 use \ElContraption\WpThemeConfig\ThemeConfig;
 
-/**
- * Autoloader
- */
+/*
+|--------------------------------------------------------------------------
+| Autoloader
+|--------------------------------------------------------------------------
+*/
+
 require('vendor/autoload.php');
 
-/**
- * WP Theme Config
- */
+/*
+|--------------------------------------------------------------------------
+| Theme configuration
+|--------------------------------------------------------------------------
+*/
+
 $config = ThemeConfig::getInstance();
 
-/**
- * Load helpers
- * @var array
- */
+
+/*
+|--------------------------------------------------------------------------
+| Load helpers
+|--------------------------------------------------------------------------
+*/
+
 $includes = array(
     'lib/shortcodes.php',
 );
@@ -25,21 +35,26 @@ foreach ($includes as $include)
     require_once($include);
 }
 
-/**
- * Redirect non-logged in users to the holding page.
- */
+/*
+|--------------------------------------------------------------------------
+| Redirect non-logged in users to the coming soon page
+|--------------------------------------------------------------------------
+*/
+
 add_action('template_redirect', function()
 {
-    if (is_user_logged_in())
-    {
-        return;
-    }
+    if (is_user_logged_in()) return;
 
-    if (is_page('coming-soon'))
-    {
-        return;
-    }
+    if (is_page('coming-soon')) return;
 
     wp_redirect(home_url('coming-soon'));
     exit();
 });
+
+$workingGroups = new PostType('working-group', array(), array(
+    'public' => true,
+    'rewrite' => array(
+        'slug' => 'working-groups',
+        'with_front' => false
+    )
+));

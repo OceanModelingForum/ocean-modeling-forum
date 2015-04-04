@@ -4,8 +4,9 @@
 }
 
 .Event {
+    padding: 0 0 1rem;
     border-bottom: 1px solid rgba(255,255,255,0.5);
-    
+
     .Block--image & {
         color: #fff;
     }
@@ -17,25 +18,48 @@
 }
 
 .Event-header {
-    padding: 2rem 0;
+    padding: 1rem 0 0;
+
+    @include bp-desktop {
+        padding: 2rem 0;
+    }
+}
+
+.Event-meta {
+    padding: 0.5rem 0 0;
 }
 
 .Event-date {
-    @include font-size(18);
+    display: block;
+    @include font-size(16);
     font-weight: 600;
+
+    @include bp-desktop {
+        @include font-size(18);
+    }
 }
 
 .Event-location {
-    @include font-size(18);
+    @include font-size(16);
     line-height: 1;
+
+    @include bp-desktop {
+        @include font-size(18);
+    }
 }
 
 .Event-title {
-    @include font-size(56);
+    @include font-size(48);
     line-height: 1;
     font-weight: 100;
+
+    @include bp-desktop {
+        @include font-size(56);
+    }
 }
 
-.Event-body {
-    
+.Event-content {
+    padding: 1rem 0;
+    border-top: 1px solid #fff;
+    border-color: rgba(255,255,255,0.5);
 }

@@ -6,7 +6,7 @@
 */
 
 $base-font-size: 19;
-$base-line-height: 1.5;
+$base-line-height: 1.6;
 
 @mixin sans {
     font: {
@@ -49,9 +49,13 @@ html {
 
 body {
     @include sans;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
     color: $blue-text;
+
+    @include bp (min-width, $bp-2) {
+        font-size: 1rem;
+    }
 }
 
 a {

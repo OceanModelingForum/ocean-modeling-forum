@@ -1,20 +1,18 @@
 
-.Cards {
-    margin: 2rem 0 0;
-}
-
 .Card {
-    margin: 1rem 0;
-    @include bp(min-width, $bp-2) {
-        margin: 1rem;
-    }
+
 }
 
-.Card-link {
-    display: block;
-    text-decoration: none;
+.Card--shadow {
+    box-shadow: $box-shadow;
+}
+
+.Card--rounded {
     border-radius: $border-radius;
     overflow: hidden;
+}
+
+.Card--hover-shadow {
     transition: box-shadow 0.15s ease;
 
     &:hover {
@@ -22,10 +20,38 @@
     }
 }
 
+.Card + .Card {
+    margin-top: 1rem;
+
+    @include bp (min-width, $bp-2) {
+        margin-top: 2rem;
+    }
+}
+
+.Card-link {
+    display: block;
+}
+
 .Card-header {
 
 }
 
 .Card-title {
+    @include font-size(20);
+
+    @include bp-desktop {
+        @include font-size(24);
+    }
+}
+
+.Card-meta {
+    @include font-size(14);
+
+    @include bp-desktop {
+        @include font-size(16);
+    }
+}
+
+.Card-content {
 
 }

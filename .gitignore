@@ -1,15 +1,32 @@
 
 # System
+*~
 .DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+
+# Dependencies
+/vendor
+composer.lock
 
 # Development
-.sass-cache
 env.php
+.sass-cache
+.tmp
+*.log
+_notes
+.env
 
-# WordPress
+# wordpress specific
 .htaccess
 wp-content/uploads/
-wp-contend/upgrade/*
+wp-content/blogs.dir/
+wp-content/upgrade/*
+wp-content/backup-db/*
 wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
 wp-content/cache/*
 wp-content/cache/supercache/*

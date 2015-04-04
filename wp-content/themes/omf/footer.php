@@ -4,7 +4,7 @@
  */
 ?>
 
-    </div>
+    </div><?php // /.Container ?>
 
     <?php wp_footer(); ?>
 

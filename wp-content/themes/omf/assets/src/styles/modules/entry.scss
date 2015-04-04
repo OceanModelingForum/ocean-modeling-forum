@@ -20,14 +20,13 @@
     }
 
     h3 {
-        @include serif;
         @include font-size(30);
         font-weight: 600;
     }
 
     ul,
     ol {
-        margin-left: 4rem;
+        margin-left: 2rem;
 
         li {
             margin-top: 0;
@@ -52,6 +51,10 @@
         height: 1px;
         background: #bbb;
         border: none;
+    }
+
+    small {
+        @include font-size(14);
     }
 
 }

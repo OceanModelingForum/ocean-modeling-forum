@@ -37,6 +37,17 @@ Menu.prototype.interactions = function() {
         event.preventDefault();
         _this.toggle();
     });
+
+    /**
+     * Selecting a menu item
+     */
+    this.$menu.find('a').one('tap', function(event) {
+        event.preventDefault();
+
+        var href = $(this).attr('href');
+
+        _this.close(href);
+    });
 };
 
 /**
@@ -77,7 +88,7 @@ Menu.prototype.transitionEnd = function(callback) {
 /**
  * Close the menu
  */
-Menu.prototype.close = function() {
+Menu.prototype.close = function(url) {
 
     var _this = this;
 
@@ -87,6 +98,8 @@ Menu.prototype.close = function() {
     this.transitionEnd(function() {
         _this.$body.removeClass(_this.bodyTransitionClass);
         _this.isActive = false;
+
+        if (url) window.location.href = url;
     });
 };
 
