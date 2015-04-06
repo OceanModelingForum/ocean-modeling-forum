@@ -1,6 +1,6 @@
 
 // Pull in jquery.smooth-scroll,
-// skipping jquery dependency
+// skipping extra jquery dependency
 require('jquery-smooth-scroll/src/jquery.smooth-scroll');
 
 var $body = $('body');

@@ -43,7 +43,7 @@
                     "name": "title",
                     "prefix": "",
                     "type": "text",
-                    "instructions": "The title of this block.",
+                    "instructions": "The title of this block. Also used as the text shown in the 'next' arrow of the previous block. **Must be unique for this page.**",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -66,7 +66,7 @@
                     "prefix": "",
                     "type": "radio",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -91,7 +91,7 @@
                     "prefix": "",
                     "type": "radio",
                     "instructions": "Minimum block height, relative to window.",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": [
                         [
                             {
@@ -108,9 +108,9 @@
                     },
                     "choices": {
                         "false": "None",
-                        "full": "Full height",
-                        "three-quarter": "Three-quarter height",
-                        "half": "Half height"
+                        "full": "Full",
+                        "three-quarter": "Three-quarter",
+                        "half": "Half"
                     },
                     "other_choice": 0,
                     "save_other_choice": 0,
@@ -124,7 +124,7 @@
                     "prefix": "",
                     "type": "radio",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -149,7 +149,7 @@
                     "prefix": "",
                     "type": "color_picker",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": [
                         [
                             {
@@ -173,7 +173,7 @@
                     "prefix": "",
                     "type": "radio",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -197,7 +197,7 @@
                     "prefix": "",
                     "type": "color_picker",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": [
                         [
                             {
@@ -287,7 +287,7 @@
                     "prefix": "",
                     "type": "radio",
                     "instructions": "Image location relative to text.",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -296,14 +296,12 @@
                     },
                     "choices": {
                         "background": "Background",
-                        "above": "Above",
-                        "right": "Right",
                         "left": "Left",
-                        "below": "Below"
+                        "right": "Right"
                     },
                     "other_choice": 0,
                     "save_other_choice": 0,
-                    "default_value": "above",
+                    "default_value": "background",
                     "layout": "horizontal"
                 },
                 {
@@ -313,7 +311,7 @@
                     "prefix": "",
                     "type": "select",
                     "instructions": "Images will crop automatically to fit their container. Set the image anchor to best fit the image subject.",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -332,7 +330,7 @@
                         "bottom-right": "Bottom-right"
                     },
                     "default_value": {
-                        "center": "center"
+                        "center-center": "center-center"
                     },
                     "allow_null": 0,
                     "multiple": 0,
@@ -433,12 +431,12 @@
                 },
                 {
                     "key": "field_5520196fbb377",
-                    "label": "Text placement",
-                    "name": "text_placement",
+                    "label": "Text placement: vertical",
+                    "name": "text_placement_vertical",
                     "prefix": "",
-                    "type": "select",
-                    "instructions": "Location of text content relative to background image.",
-                    "required": 1,
+                    "type": "radio",
+                    "instructions": "Vertical placement of text content relative to background image.",
+                    "required": 0,
                     "conditional_logic": [
                         [
                             {
@@ -454,26 +452,82 @@
                         "id": ""
                     },
                     "choices": {
-                        "top-left": "Top-left",
-                        "top": "Top-center",
-                        "top-right": "Top-right",
-                        "center-left": "Center-left",
+                        "top": "Top",
+                        "middle": "Center",
+                        "bottom": "Bottom"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "middle",
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_5521679c87711",
+                    "label": "Text placement: horizontal",
+                    "name": "text_placement_horizontal",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "Horizontal placement of text content relative to background image.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_55201691fd005",
+                                "operator": "==",
+                                "value": "background"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "left": "Left",
                         "center": "Center",
-                        "center-right": "Center-right",
-                        "bottom-left": "Bottom-left",
-                        "bottom": "Bottom-center",
-                        "bottom-right": "Bottom-right"
+                        "right": "Right"
                     },
-                    "default_value": {
-                        "center": "center"
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "",
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_552169a9384ab",
+                    "label": "Text width",
+                    "name": "text_width",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "Constrain the text column relative to the window size.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_55201691fd005",
+                                "operator": "==",
+                                "value": "background"
+                            },
+                            {
+                                "field": "field_5521679c87711",
+                                "operator": "==",
+                                "value": "center"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
                     },
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
+                    "choices": {
+                        "contain": "Max page width",
+                        "half": "Half window width"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "contain",
+                    "layout": "horizontal"
                 },
                 {
                     "key": "field_552019f72d0c9",
@@ -481,8 +535,8 @@
                     "name": "text_alignment",
                     "prefix": "",
                     "type": "radio",
-                    "instructions": "",
-                    "required": 1,
+                    "instructions": "Align text content within the text column.",
+                    "required": 0,
                     "conditional_logic": [
                         [
                             {
@@ -713,5 +767,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428183457
+    "modified": 1428333192
 }

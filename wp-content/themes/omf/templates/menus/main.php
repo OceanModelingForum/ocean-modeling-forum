@@ -66,8 +66,8 @@ $main = array(
                     <ul class="Menu-small">
 
                         <li>
-                            <a href="#">
-                                <span><a href="mailto:info@oceanmodelingforum.org">info@oceanmodelingforum.org</a></span>
+                            <a href="mailto:info@oceanmodelingforum.org">
+                                <span>info@oceanmodelingforum.org</span>
                             </a>
                         </li>
 

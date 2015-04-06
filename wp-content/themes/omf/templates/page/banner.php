@@ -20,8 +20,7 @@ use OMF\Block;
 //     'background-position: ' . $anchor . ';',
 // );
 
-$banner = new Block(array(
-));
+$banner = new Block(array());
 
 ?>
 

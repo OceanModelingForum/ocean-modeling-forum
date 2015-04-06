@@ -1,199 +1,133 @@
 
-var getStyleProperty = require('desandro-get-style-property');
 var tappy = require('tappy-js');
 
-var transitionProp = getStyleProperty('transition');
-var transitionEndEvent = {
-    WebkitTransition: 'webkitTransitionEnd',
-    MozTransition: 'transitionend',
-    OTransition: 'otransitionend',
-    transition: 'transitionend'
-}[transitionProp];
+/**
+ * Create a new Modal instance.
+ *
+ * @param {Object} $element
+ * @param {Object} options
+ */
+var Modal = function($element) {
 
-var Modal = function(element, options) {
+    this.$el = $element;
 
-    // The linking element
-    this.$el = element;
+    this.$modal = $('#' + this.$el.data('id'));
 
-    this.init(options);
+    this.init();
 };
 
 Modal.prototype = {
-
-    // ID linking element and modal
-    id: 0,
-
-    // Is the modal open?
-    isActive: false,
-
-    // Select the body element once
     $body: $('body'),
-
-    // Default settings
-    defaults: {
-        modalClass: 'Modal',
-        modalContainerClass: 'Modal-container',
-        modalTransitionClass: 'Modal--transition',
-        modalActiveClass: 'Modal--active',
-        backgroundEffects: []
-    },
-
-    // Registered background effects
-    backgroundEffects: []
+    bodyTransitionClass: 'Modal--transition',
+    bodyActiveClass: 'Modal--active',
+    transitionDuration: 150,
+    isActive: false
 };
 
-Modal.prototype.init = function(options) {
-
-    // Make options from defaults and element settings
-    this.options = $.extend({}, this.defaults, options, this.$el.data('modal'));
-
-    // Exit if no id
-    if (this.options.id === 0) return false;
-
-    // Select modal
-    this.$modal = $('#' + this.options.id);
-
-    // Exit if no modal
-    if (this.$modal.length === 0) return false;
-
-    // Register background effects
-    //this.registerBackgroundEffects();
-
-    // Register events
-    this.events();
-};
-
-Modal.prototype.events = function() {
+/**
+ * Initializer.
+ */
+Modal.prototype.init = function() {
 
     var _this = this,
         allowedKeys = [27],
         activeKeys = [];
 
-    // Selecting an element opens the modal
-    this.$el.on('tap, click', function(event) {
+    this.$el.on('tap', function(event) {
         event.preventDefault();
         _this.toggle();
     });
 
-    // Selecting outside of the modal closes the modal
-    this.$modal.on('tap, click', function(event) {
+    // Handle keys
+    $(document).on('keydown', function(event) {
 
-        if ($(event.target).hasClass(_this.options.modalContainerClass)) {
-            _this.close();
+        // Check for allowed key
+        if ($.inArray(event.which, allowedKeys) === -1) return;
+
+        switch(event.which) {
+            case 27: //esc
+                // track active keys to prevent key holding
+                if (!activeKeys['27']) {
+                    _this.close();
+                    activeKeys['27'] = true;
+                }
+                break;
         }
     });
 
-    // Escape key closes the modal
-    $(document).on('keydown', function(event) {
-
-        // Key whitelist
-        if ($.inArray(event.which, allowedKeys) === -1) return;
-
-        // Esc key only
-        if (event.which !== 27) return;
-
-        // Prevent key hold
-        if (activeKeys['27']) return;
-
-        _this.close();
-        activeKeys[27] = true;
-    });
-
     // Clear key array on keyup
-    $(document).on('keyup', function() {
+    $(document).on('keyup', function(event) {
         var keycode = event.keycode ? event.keycode : event.which;
         activeKeys[keycode] = false;
-    })
+    });
 };
 
-Modal.prototype.toggle = function(action) {
+/**
+ * Toggle menu open/close state
+ */
+Modal.prototype.toggle = function() {
     this.isActive ? this.close() : this.open();
 };
 
+/**
+ * Open the menu
+ */
 Modal.prototype.open = function() {
+
     var _this = this;
 
-    // Necessary because some events are unaware of which
-    // modal they're affecting
-    if (this.isActive) return;
+    this.$body.addClass(this.bodyTransitionClass);
+    this.$body.addClass(this.bodyActiveClass);
 
-    //this.addBackgroundEffects();
-    this.$modal.addClass(this.options.modalTransitionClass);
-    this.$modal.addClass(this.options.modalActiveClass);
-
-    this.$modal.one(transitionEndEvent, function() {
-        _this.$modal.removeClass(_this.options.modalTransitionClass);
+    this.transitionEnd(function() {
+        _this.$body.removeClass(_this.bodyTransitionClass);
+        _this.$modal.trigger('focus');
         _this.isActive = true;
-    })
+    });
 };
 
-Modal.prototype.close = function() {
+/**
+ * Cross-browser transition end event
+ */
+Modal.prototype.transitionEnd = function(callback) {
+
+    // Removed transitionEndEvent, because FF on IE9 was
+    // showing support for transitions, but wasn't actually
+    // supporting them.
+    return setTimeout(callback, this.transitionDuration);
+};
+
+/**
+ * Close the modal.
+ */
+Modal.prototype.close = function(url) {
+
     var _this = this;
 
-    // Necessary because some events are unaware of which
-    // modal they're affecting
-    if (! this.isActive) return;
+    this.$body.addClass(this.bodyTransitionClass);
+    this.$body.removeClass(this.bodyActiveClass);
 
-    this.$modal.addClass(this.options.modalTransitionClass);
-    this.$modal.removeClass(this.options.modalActiveClass);
-    //this.removeBackgroundEffects();
-
-    this.$modal.one(transitionEndEvent, function() {
-        _this.$modal.removeClass(_this.options.modalTransitionClass);
+    this.transitionEnd(function() {
+        _this.$body.removeClass(_this.bodyTransitionClass);
         _this.isActive = false;
+
+        if (url) window.location.href = url;
     });
 };
 
 /**
- * Register background effects
+ * Make jQuery plugin.
+ *
+ * @param  {String}     id
+ * @return {Object}     new Modal()
  */
-// Modal.prototype.registerBackgroundEffects = function() {
-//
-//     if (! this.options.backgroundEffects) return;
-//
-//     var _this = this;
-//
-//     $.each(this.options.backgroundEffects, function() {
-//         var effect = 'Effect-' + this;
-//         if ($.inArray(effect, _this.backgroundEffects) !== -1) return;
-//         _this.backgroundEffects.push(effect);
-//     });
-//
-// };
-
-/**
- * Add background effects to body
- */
-// Modal.prototype.addBackgroundEffects = function() {
-//
-//     var $body = this.$body;
-//
-//     $.each(this.backgroundEffects, function(index, val) {
-//         $body.addClass(val);
-//     });
-// };
-
-/**
- * Remove background effects from body
- */
-// Modal.prototype.removeBackgroundEffects = function() {
-//     var $body = this.$body;
-//
-//     $.each(this.backgroundEffects, function(index, val) {
-//         $body.removeClass(val);
-//     });
-// };
-
-/**
- * Register jQuery plugin
- */
-$.fn.modal = function(options) {
+$.fn.modal = function(id) {
     return this.each(function() {
-        new Modal($(this), options);
+        new Modal($(this));
     });
 };
 
 /**
- * Auto-initialize for for elements with 'data-modal' attribute
+ * Auto-initialize for elements with [data-modal] attribute.
  */
 $('[data-modal]').modal();

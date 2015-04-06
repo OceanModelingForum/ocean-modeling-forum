@@ -3,74 +3,78 @@
 /**
  * Show a layout block.
  *
- * Should be rendered via \OMF\Block class.
+ * Should be assigned attributes and rendered via \OMF\Block class.
  */
-
 ?>
 
-<section class="<?php echo $classes; ?>" id="<?php echo $id; ?>" style="<?php echo $styles; ?>">
+<?php include locate_template('templates/blocks/header.php'); ?>
 
-    <div class="Block-header"></div>
+    <?php if ($image_placement == 'left' && isset($image)) : ?>
 
-    <div class="Block-content">
+        <div class="Grid-cell u-size-6of12">
 
-        <div class="Block-content-inner u-align--middle">
+            <?php include locate_template('templates/blocks/image.php'); ?>
 
-            <div class="Block-container">
+        </div>
 
-                <div class="Grid Grid--collapsable">
+    <?php endif; ?>
 
-                    <div class="Grid-cell u-size-6of12">
+    <?php if ($text_placement_horizontal == 'center') : ?>
 
-                        <?php if (isset($title)) : ?>
+        <?php if ($text_width == 'contain') : ?>
 
-                            <h2 class="Block-title"><?php echo $title; ?></h2>
+            <div class="Grid-cell u-size-12of12">
 
-                        <?php endif; ?>
+                <div class="u-container">
 
-                        <?php if (isset($headline)) : ?>
+        <?php else : ?>
 
-                            <p class="Block-headline"><?php echo $headline; ?></p>
+            <div class="Grid-cell u-size-3of12"></div>
 
-                        <?php endif; ?>
+            <div class="Grid-cell u-size-6of12">
 
-                        <?php if (isset($lede)) : ?>
+        <?php endif; ?>
 
-                            <p class="Block-lede"><?php echo $lede; ?></p>
+    <?php elseif ($text_placement_horizontal == 'right') : ?>
 
-                        <?php endif; ?>
+        <div class="Grid-cell u-size-6of12 u-float--right">
 
-                        <?php if (isset($text)) : ?>
+    <?php else : ?>
 
-                            <?php echo $text; ?>
+        <div class="Grid-cell u-size-6of12">
 
-                        <?php endif; ?>
+    <?php endif; ?>
 
-                    </div>
+        <?php include locate_template('templates/blocks/content.php'); ?>
 
+        <?php if ($show_next_arrow && $image_placement !== 'background') : ?>
 
-                </div>
+            <div class="u-align--center">
+
+                <?php echo $next_arrow; ?>
+
+                <br><br>
 
             </div>
 
+        <?php endif; ?>
+
+        <?php if ($text_placement_horizontal == 'center' && $text_width == 'contain') : ?>
+
+            </div>
+
+        <?php endif; ?>
+
+    </div><?php // end content grid cell // ?>
+
+    <?php if ($image_placement == 'right' && isset($image)) : ?>
+
+        <div class="Grid-cell u-size-6of12">
+
+            <?php include locate_template('templates/blocks/image.php'); ?>
+
         </div>
 
-    </div>
+    <?php endif; ?>
 
-    <div class="Block-footer">
-
-        <div class="Block-footer-inner u-align--center">
-
-            <a class="Button Button--dark Button--arrow Button--arrow-down Button--wiggle" href="#approach">
-
-                <div class="Button-title">Our Approach</div>
-
-                <svg class="Button-icon"><use xlink:href="#icon-chevron-down"></use></svg>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
+<?php include locate_template('templates/blocks/footer.php'); ?>

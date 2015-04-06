@@ -28,9 +28,17 @@ class Block {
     {
         // Default arguments
         $this->args = wp_parse_args($args, array(
-            'id'            => '',
-            'type'          => 'normal',
-            'styles'        => '',
+            'id'                => '',
+            'type'              => 'normal',
+            'styles'            => '',
+            'image_placement'   => '',
+            'image'             => '',
+            'image_padding'     => '',
+            'image_caption'     => '',
+            'text_placement'    => '',
+            'text_alignment'    => '',
+            'show_next_arrow'   => '',
+            'next_block'        => false,
         ));
 
 
@@ -41,6 +49,10 @@ class Block {
             'background'    => '',
             'text'          => '',
         ));
+
+        if ($this->args['image_placement'] == 'background') $this->args['styles']['background-image'] = 'url(' . $this->args['image'] . ')';
+
+        if ($this->args['image_anchor']) $this->args['styles']['background-position'] = $this->args['image_anchor'];
     }
 
     /**
@@ -56,10 +68,6 @@ class Block {
         {
             if ( ! $value) continue;
 
-            // Class examples:
-            // Block--type-normal
-            // Block--height-three-quarter
-            // Block--background-light
             $classes[] = 'Block--' . $key . '-' . $value;
         }
 
@@ -94,6 +102,8 @@ class Block {
     {
         extract($this->args);
 
+        $next_arrow = $this->makeNextArrow();
+
         $classes = $this->getClasses();
 
         $styles = $this->getStyles();
@@ -103,6 +113,24 @@ class Block {
         if ( ! $template) return false;
 
         include $template;
+    }
+
+    /**
+     * Create next arrow
+     */
+    protected function makeNextArrow()
+    {
+        ob_start();
+
+        extract($this->args);
+
+        include locate_template('templates/blocks/next-arrow.php');
+
+        $output = ob_get_contents();
+
+        ob_end_clean();
+
+        return $next_block ? $output : false;
     }
 
 }

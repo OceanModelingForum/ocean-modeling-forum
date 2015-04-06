@@ -5,6 +5,8 @@
 
 <body>
 
+    <?php get_template_part('templates/icons/svgdefs.svg'); ?>
+
     <?php get_template_part('templates/menus/main'); ?>
 
     <?php get_template_part('templates/header/header'); ?>

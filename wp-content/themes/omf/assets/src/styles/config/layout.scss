@@ -17,6 +17,7 @@ body {
 /**
  * Disable scrolling when menu is active
  */
+body.Modal--active,
 body.Menu--active {
     overflow: hidden;
 }
