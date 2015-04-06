@@ -200,3 +200,27 @@
     }
 
 }
+
+.Block--text-dark .Button--arrow {
+
+    .Button-title {
+        color: $text;
+    }
+
+    svg {
+        fill: $text;
+    }
+
+}
+
+.Block--text-light .Button--arrow {
+
+    .Button-title {
+        color: #fff;
+    }
+
+    svg {
+        fill: #fff;
+    }
+
+}
