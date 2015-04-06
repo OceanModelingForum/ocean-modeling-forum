@@ -105,10 +105,10 @@
     position: relative;
     z-index: 100;
     display: table-cell;
-    padding: 1rem 0;
+    vertical-align: middle;
 
     @include bp-desktop {
-        padding: 2rem 0;
+        padding: 0;
     }
 }
 

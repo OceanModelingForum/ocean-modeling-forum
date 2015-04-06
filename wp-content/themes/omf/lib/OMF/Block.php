@@ -34,9 +34,12 @@ class Block {
             'image_placement'   => '',
             'image'             => '',
             'image_padding'     => '',
+            'image_anchor'      => '',
             'image_caption'     => '',
-            'text_placement'    => '',
+            'text_placement_horizontal'    => '',
+            'text_placement_vertical'    => '',
             'text_alignment'    => '',
+            'text_width'        => '',
             'show_next_arrow'   => '',
             'next_block'        => false,
         ));

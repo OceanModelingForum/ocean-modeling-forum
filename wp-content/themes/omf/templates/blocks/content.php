@@ -12,6 +12,12 @@
 
     <?php endif; ?>
 
+    <?php if (isset($extra)) : ?>
+
+        <p class="Block-lede Block-lede--extra"><?php echo $extra; ?></p>
+
+    <?php endif; ?>
+
     <?php if (isset($lede)) : ?>
 
         <p class="Block-lede"><?php echo $lede; ?></p>

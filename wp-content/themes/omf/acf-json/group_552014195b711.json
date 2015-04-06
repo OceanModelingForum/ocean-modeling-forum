@@ -757,6 +757,13 @@
                 "operator": "==",
                 "value": "template-blocks.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-home.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -767,5 +774,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428333192
+    "modified": 1428344761
 }

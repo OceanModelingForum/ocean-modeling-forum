@@ -3,7 +3,7 @@
  * Display the main menu
  */
 
-$main = array(
+$args = array(
     'theme_location'    => 'main-menu',
     'container'         => false,
     'depth'             => 1,
@@ -21,41 +21,7 @@ $main = array(
 
         <div class="Menu-center">
 
-            <ul class="Menu-items">
-
-                <li>
-                    <a href="{{root}}">
-                        <div class="u-container">
-                            Home
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{root}}#working-groups">
-                        <div class="u-container">
-                            Working Groups
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{root}}#summary">
-                        <div class="u-container">
-                            About OMF
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{root}}news">
-                        <div class="u-container">
-                            News
-                        </div>
-                    </a>
-                </li>
-
-            </ul>
+            <?php wp_nav_menu($args); ?>
 
             <div class="Menu-footer">
 
