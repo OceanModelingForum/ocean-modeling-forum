@@ -69,7 +69,7 @@ if ($working_groups_selection == 'all')
 
         <div class="Block-footer-inner">
 
-            <br>
+            <br><br>
 
             <?php if ($show_next_arrow) : ?>
 

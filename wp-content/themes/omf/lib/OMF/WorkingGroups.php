@@ -45,10 +45,17 @@ class WorkingGroups {
 
     public function all()
     {
-        $query = new WP_Query(array(
+        $args = array(
             'post_type' => 'working_group',
-            'posts_per_page' => -1
-        ));
+            'posts_per_page' => -1,
+            'meta_key'  => 'group_code',
+            'orderby' => 'meta_value',
+            'order'     => 'ASC'
+        );
+
+        // Default
+
+        $query = new WP_Query($args);
 
         return $query;
     }
