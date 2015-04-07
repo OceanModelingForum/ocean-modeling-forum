@@ -229,7 +229,7 @@
                         "id": ""
                     },
                     "message": "Show \"next\" arrow",
-                    "default_value": 0
+                    "default_value": 1
                 },
                 {
                     "key": "field_55201bd31772e",
@@ -471,11 +471,6 @@
                                 "field": "field_55201691fd005",
                                 "operator": "==",
                                 "value": "background"
-                            },
-                            {
-                                "field": "field_5521679c87711",
-                                "operator": "==",
-                                "value": "center"
                             }
                         ]
                     ],
@@ -745,5 +740,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428417527
+    "modified": 1428418658
 }
