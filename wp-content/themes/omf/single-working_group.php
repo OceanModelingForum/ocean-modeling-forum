@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template name: Home page
+ * Working Group
  *
  * Lay out content using ACF block type.
  */
@@ -42,11 +42,13 @@ $args = array(
     'type' => 'normal',
     'image' => $image['sizes']['large'],
     'image_placement' => 'background',
-    'text_placement_vertical' => 'middle',
+    'text_placement_vertical' => 'bottom',
     'text_placement_horizontal' => 'center',
     'text_width' => 'contain',
     'text_alignment' => 'center',
-    'extra' => apply_filters('the_title', do_shortcode(get_field('text'))),
+    'title' => apply_filters('the_title', get_field('group_code')),
+    'extra' => apply_filters('the_title', do_shortcode('[emphasis]' . get_the_title() . '[/emphasis]')),
+    'lede' => apply_filters('the_title', do_shortcode(get_field('lede'))),
     'show_next_arrow' => true,
     'next_block' => isset($next_block) ? $next_block : false,
     'image_caption' => $image['caption'],

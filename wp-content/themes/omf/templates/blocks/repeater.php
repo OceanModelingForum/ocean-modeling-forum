@@ -53,12 +53,14 @@ if (have_rows('blocks'))
             'lede'                      => apply_filters('the_title', get_sub_field('lede')),
             'text'                      => apply_filters('the_content', get_sub_field('text')),
             'image_placement'           => $image_placement,
-            'image_anchor'              => str_replace('-', ' ', get_sub_field('image_anchor')),
+            'image_anchor'              => get_sub_field('image_anchor'),
             'text_placement_vertical'   => get_sub_field('text_placement_vertical'),
             'text_placement_horizontal' => get_sub_field('text_placement_horizontal'),
             'text_width'                => get_sub_field('text_width'),
             'text_alignment'            => get_sub_field('text_alignment'),
             'show_next_arrow'           => get_sub_field('show_next_arrow'),
+            'working_groups_selection'  => get_sub_field('working_groups_selection'),
+            'working_groups'            => get_sub_field('working_groups'),
             'styles'                    => $styles,
         );
 

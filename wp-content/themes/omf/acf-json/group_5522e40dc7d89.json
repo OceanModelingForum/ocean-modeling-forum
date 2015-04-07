@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_5522e40dca728",
-            "label": "Banner",
-            "name": "banner",
+            "label": "Image",
+            "name": "image",
             "prefix": "",
             "type": "image",
             "instructions": "",
@@ -28,13 +28,13 @@
             "mime_types": ""
         },
         {
-            "key": "field_5522e40dca748",
-            "label": "Code",
-            "name": "Code",
+            "key": "field_5523ee526d6e1",
+            "label": "Group code",
+            "name": "group_code",
             "prefix": "",
             "type": "text",
-            "instructions": "E.g. OMF-1, OMF-2...",
-            "required": 1,
+            "instructions": "",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -89,5 +89,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428350959
+    "modified": 1428418150
 }

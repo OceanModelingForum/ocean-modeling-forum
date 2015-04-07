@@ -44,7 +44,6 @@ class Block {
             'next_block'        => false,
         ));
 
-
         // Default attributes
         // * all options must be declared here to be included style string *
         $this->attributes = wp_parse_args($attributes, array(

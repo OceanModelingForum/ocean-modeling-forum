@@ -305,42 +305,6 @@
                     "layout": "horizontal"
                 },
                 {
-                    "key": "field_552016f5b2017",
-                    "label": "Image anchor",
-                    "name": "image_anchor",
-                    "prefix": "",
-                    "type": "select",
-                    "instructions": "Images will crop automatically to fit their container. Set the image anchor to best fit the image subject.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "top-left": "Top-left",
-                        "top-center": "Top-center",
-                        "top-right": "Top-right",
-                        "center-left": "Center-left",
-                        "center-center": "Center",
-                        "center-right": "Center-right",
-                        "bottom-left": "Bottom-left",
-                        "bottom-center": "Bottom-center",
-                        "bottom-right": "Bottom-right"
-                    },
-                    "default_value": {
-                        "center-center": "center-center"
-                    },
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
-                },
-                {
                     "key": "field_5520240fccf7b",
                     "label": "Files",
                     "name": "",
@@ -764,6 +728,13 @@
                 "operator": "==",
                 "value": "template-home.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "working_group"
+            }
         ]
     ],
     "menu_order": 0,
@@ -774,5 +745,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428365221
+    "modified": 1428417527
 }

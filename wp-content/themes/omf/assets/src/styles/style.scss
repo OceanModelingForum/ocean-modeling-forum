@@ -68,4 +68,8 @@ $utility-size-y-values: (12);
 @import 'modules/blocks';
 @import 'modules/page';
 @import 'modules/list';
+
+/**
+ * Only for the 'coming soon' page.
+ */
 @import 'modules/banner';

@@ -1,6 +1,7 @@
 <?php namespace OMF;
 
 use ElContraption\WpPostType\PostType;
+use WP_Query;
 
 class WorkingGroups {
 
@@ -40,6 +41,16 @@ class WorkingGroups {
         );
 
         $postType = new PostType('working_group', array(), $args);
+    }
+
+    public function all()
+    {
+        $query = new WP_Query(array(
+            'post_type' => 'working_group',
+            'posts_per_page' => -1
+        ));
+
+        return $query;
     }
 
 }
