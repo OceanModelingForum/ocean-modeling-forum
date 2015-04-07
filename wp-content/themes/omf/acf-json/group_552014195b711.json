@@ -1,6 +1,6 @@
 {
     "key": "group_552014195b711",
-    "title": "Blocks",
+    "title": "Content blocks",
     "fields": [
         {
             "key": "field_5520144b84a77",
@@ -407,6 +407,11 @@
                                 "field": "field_55201691fd005",
                                 "operator": "==",
                                 "value": "background"
+                            },
+                            {
+                                "field": "field_55202276d7f29",
+                                "operator": "==",
+                                "value": "background"
                             }
                         ]
                     ],
@@ -683,6 +688,49 @@
                     ]
                 },
                 {
+                    "key": "field_5523f83f5ab52",
+                    "label": "Text",
+                    "name": "",
+                    "prefix": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_55202276d7f29",
+                                "operator": "==",
+                                "value": "working_groups"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top"
+                },
+                {
+                    "key": "field_5523f8555ab53",
+                    "label": "Text",
+                    "name": "description",
+                    "prefix": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0
+                },
+                {
                     "key": "field_552029148aa51",
                     "label": "Schedule",
                     "name": "",
@@ -740,5 +788,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428418658
+    "modified": 1428420783
 }

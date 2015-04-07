@@ -27,6 +27,8 @@ if ($working_groups_selection == 'all')
 
                 <h2 class="Block-title u-align--center">Working Groups</h2>
 
+                <?php echo $description; ?>
+
             </div>
 
         </div>

@@ -52,6 +52,7 @@ if (have_rows('blocks'))
             'headline'                  => apply_filters('the_title', get_sub_field('headline')),
             'lede'                      => apply_filters('the_title', get_sub_field('lede')),
             'text'                      => apply_filters('the_content', get_sub_field('text')),
+            'description'               => apply_filters('the_content', get_sub_field('description')),
             'image_placement'           => $image_placement,
             'image_anchor'              => get_sub_field('image_anchor'),
             'text_placement_vertical'   => get_sub_field('text_placement_vertical'),
@@ -84,7 +85,7 @@ if (have_rows('blocks'))
 
         $attributes = array(
             'height'            => get_sub_field('height'),
-            'background'        => get_sub_field('backround_color'),
+            'background'        => get_sub_field('background_color'),
             'text'              => get_sub_field('text_color'),
         );
 
