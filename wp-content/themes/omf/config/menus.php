@@ -15,7 +15,8 @@ return array(
     */
 
     'locations' => array(
-        'Main Menu'
+        'Main Menu',
+        'Footer Menu'
     ),
 
 );

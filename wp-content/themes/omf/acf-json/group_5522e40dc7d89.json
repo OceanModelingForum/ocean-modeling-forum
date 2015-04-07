@@ -1,11 +1,11 @@
 {
-    "key": "group_55229502cad0f",
-    "title": "Home banner",
+    "key": "group_5522e40dc7d89",
+    "title": "Working group banner",
     "fields": [
         {
-            "key": "field_5522cf566c11b",
-            "label": "Image",
-            "name": "image",
+            "key": "field_5522e40dca728",
+            "label": "Banner",
+            "name": "banner",
             "prefix": "",
             "type": "image",
             "instructions": "",
@@ -28,13 +28,35 @@
             "mime_types": ""
         },
         {
-            "key": "field_5522955145068",
-            "label": "Text",
-            "name": "text",
+            "key": "field_5522e40dca748",
+            "label": "Code",
+            "name": "Code",
             "prefix": "",
             "type": "text",
-            "instructions": "Emphasize words by [emphasis]wrapping them in the emphasis shortcode[\/emphasis].",
+            "instructions": "E.g. OMF-1, OMF-2...",
             "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5522e76cacc1c",
+            "label": "Lede",
+            "name": "lede",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Shows beneath the title. Keep it short.",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -53,9 +75,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "template-home.php"
+                "value": "working_group"
             }
         ]
     ],
@@ -67,5 +89,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428359644
+    "modified": 1428350959
 }

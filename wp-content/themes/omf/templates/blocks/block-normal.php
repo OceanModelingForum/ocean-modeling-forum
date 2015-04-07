@@ -5,6 +5,7 @@
  *
  * Should be assigned attributes and rendered via \OMF\Block class.
  */
+
 ?>
 
 <?php include locate_template('templates/blocks/header.php'); ?>
@@ -41,7 +42,17 @@
 
     <?php else : ?>
 
-        <div class="Grid-cell u-size-6of12">
+        <?php if ($text_width == 'contain' && $image_placement == 'background') : ?>
+
+            <div class="Grid-cell u-size-12of12">
+
+                <div class="u-container">
+
+        <?php else : ?>
+
+            <div class="Grid-cell u-size-6of12">
+
+        <?php endif; ?>
 
     <?php endif; ?>
 
@@ -59,7 +70,7 @@
 
         <?php endif; ?>
 
-        <?php if ($text_placement_horizontal == 'center' && $text_width == 'contain') : ?>
+        <?php if ($text_width == 'contain' && $image_placement == 'background') : ?>
 
             </div>
 

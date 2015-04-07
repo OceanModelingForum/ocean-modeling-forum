@@ -21,9 +21,9 @@ use OMF\Modal;
 
     <img src="<?php echo $image; ?>" alt="">
 
-    <div class="Image-caption">
+    <!-- <div class="Image-caption">
         <?php echo $image_caption; ?>
-    </div>
+    </div> -->
 
     <!-- <button class="Image-info" data-modal="modal-block-<?php echo $id; ?>-image">
         <svg><use xlink:href="#icon-info"></use></svg>

@@ -12,7 +12,7 @@
 
     </div>
 
-    <?php if ( $image_placement == 'background' ) : ?>
+    <?php if ( $image_placement == 'background' && $show_next_arrow ) : ?>
 
         <div class="Block-footer">
 
@@ -24,14 +24,6 @@
 
                         <?php echo $next_arrow; ?>
 
-                    </div>
-
-                <?php endif; ?>
-
-                <?php if ($image_caption) : ?>
-
-                    <div class="Image-caption">
-                        <?php echo $image_caption; ?>
                     </div>
 
                 <?php endif; ?>

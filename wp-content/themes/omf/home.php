@@ -22,7 +22,7 @@ get_template_part('templates/news/banner');
 
                     <?php while (have_posts()) : the_post(); ?>
 
-                        <?php get_template_part('templates/news/article'); ?>
+                        <?php get_template_part('templates/news/excerpt'); ?>
 
                     <?php endwhile; ?>
 

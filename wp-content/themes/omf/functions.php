@@ -2,6 +2,7 @@
 
 use \ElContraption\WpPostType\PostType;
 use \ElContraption\WpThemeConfig\ThemeConfig;
+use \OMF\WorkingGroups;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,6 @@ require('vendor/autoload.php');
 
 $config = ThemeConfig::getInstance();
 
-
 /*
 |--------------------------------------------------------------------------
 | Load helpers
@@ -34,6 +34,14 @@ foreach ($includes as $include)
 {
     require_once($include);
 }
+
+/*
+|--------------------------------------------------------------------------
+| Initialize Working Groups
+|--------------------------------------------------------------------------
+*/
+
+WorkingGroups::getInstance();
 
 /*
 |--------------------------------------------------------------------------

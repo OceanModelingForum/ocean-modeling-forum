@@ -30,7 +30,7 @@ $next_block = array(
  * Handle banner
  */
 
-$image = get_field('banner');
+$image = get_field('image');
 
 $args = array(
     'type' => 'normal',

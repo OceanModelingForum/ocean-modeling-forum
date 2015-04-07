@@ -1,9 +1,9 @@
 {
-    "key": "group_55229502cad0f",
-    "title": "Home banner",
+    "key": "group_55230491bfafe",
+    "title": "Page banner",
     "fields": [
         {
-            "key": "field_5522cf566c11b",
+            "key": "field_55230491c2c38",
             "label": "Image",
             "name": "image",
             "prefix": "",
@@ -26,28 +26,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_5522955145068",
-            "label": "Text",
-            "name": "text",
-            "prefix": "",
-            "type": "text",
-            "instructions": "Emphasize words by [emphasis]wrapping them in the emphasis shortcode[\/emphasis].",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
         }
     ],
     "location": [
@@ -55,7 +33,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "template-home.php"
+                "value": "default"
             }
         ]
     ],
@@ -64,8 +42,6 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
-    "modified": 1428359644
+    "hide_on_screen": "",
+    "modified": 1428359583
 }

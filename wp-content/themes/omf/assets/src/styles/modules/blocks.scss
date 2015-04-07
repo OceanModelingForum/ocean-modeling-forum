@@ -204,11 +204,11 @@
 .Block--text-dark .Button--arrow {
 
     .Button-title {
-        color: $text;
+        color: $text-blue;
     }
 
     svg {
-        fill: $text;
+        fill: $text-blue;
     }
 
 }
@@ -221,6 +221,7 @@
 
     svg {
         fill: #fff;
+        fill: rgba(255,255,255,0.7);
     }
 
 }

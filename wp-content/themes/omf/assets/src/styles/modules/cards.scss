@@ -42,6 +42,11 @@
     @include bp-desktop {
         @include font-size(24);
     }
+
+    a {
+        color: $text-blue;
+        text-decoration: none;
+    }
 }
 
 .Card-meta {

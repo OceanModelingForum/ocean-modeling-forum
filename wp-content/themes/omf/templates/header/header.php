@@ -4,7 +4,7 @@
 
         <div class="Grid-cell u-size-10of12">
 
-            <a class="Header-logo" href="{{root}}"><i>OMF</i> Ocean Modeling Forum</a>
+            <a class="Header-logo" href="<?php echo home_url(); ?>"><i>OMF</i> Ocean Modeling Forum</a>
 
         </div>
 
