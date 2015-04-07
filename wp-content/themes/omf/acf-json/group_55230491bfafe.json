@@ -35,6 +35,13 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-blocks.php"
+            }
         ]
     ],
     "menu_order": -10,
@@ -43,5 +50,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1428359583
+    "modified": 1428425200
 }

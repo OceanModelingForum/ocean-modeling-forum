@@ -392,6 +392,37 @@
                     "placement": "top"
                 },
                 {
+                    "key": "field_552169a9384ab",
+                    "label": "Text width",
+                    "name": "text_width",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "Constrain the text column relative to the window size.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_55201691fd005",
+                                "operator": "==",
+                                "value": "background"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "contain": "Max page width",
+                        "half": "Half window width"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "contain",
+                    "layout": "horizontal"
+                },
+                {
                     "key": "field_5520196fbb377",
                     "label": "Text placement: vertical",
                     "name": "text_placement_vertical",
@@ -437,6 +468,11 @@
                                 "field": "field_55201691fd005",
                                 "operator": "==",
                                 "value": "background"
+                            },
+                            {
+                                "field": "field_552169a9384ab",
+                                "operator": "!=",
+                                "value": "contain"
                             }
                         ]
                     ],
@@ -453,37 +489,6 @@
                     "other_choice": 0,
                     "save_other_choice": 0,
                     "default_value": "",
-                    "layout": "horizontal"
-                },
-                {
-                    "key": "field_552169a9384ab",
-                    "label": "Text width",
-                    "name": "text_width",
-                    "prefix": "",
-                    "type": "radio",
-                    "instructions": "Constrain the text column relative to the window size.",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_55201691fd005",
-                                "operator": "==",
-                                "value": "background"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "contain": "Max page width",
-                        "half": "Half window width"
-                    },
-                    "other_choice": 0,
-                    "save_other_choice": 0,
-                    "default_value": "contain",
                     "layout": "horizontal"
                 },
                 {
@@ -781,5 +786,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428423974
+    "modified": 1428425033
 }
