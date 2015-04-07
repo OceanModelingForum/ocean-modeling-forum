@@ -76,3 +76,14 @@ a:hover {
         max-width: 30rem;
     }
 }
+
+/**
+ * Only used on coming soon page
+ */
+.Link-light {
+    color: #fff;
+
+    &:hover {
+        color: #fff !important;
+    }
+}

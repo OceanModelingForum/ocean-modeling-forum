@@ -44,6 +44,8 @@
 
                         <p class="Banner-message">Our new website will be available soon.</p>
 
+                        <p>Contact: <a class="Link-light" href="mailto:tessa@uw.edu?subject=Ocean Modeling Forum">tessa@uw.edu</a></p>
+
                     </div>
 
                 </div>
