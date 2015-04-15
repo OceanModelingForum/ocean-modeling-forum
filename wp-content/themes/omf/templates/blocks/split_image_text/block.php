@@ -28,6 +28,7 @@ switch (get_sub_field('layout'))
         $image_cell_size = '8of12';
         break;
     case 'text_72_image_48':
+    case 'image_48_text_72';
         $text_cell_size = '8of12';
         $image_cell_size = '4of12';
         break;
@@ -74,21 +75,25 @@ if ($text_color !== 'custom') $block_classes[] = 'Block--text-' . $text_color;
 
     <div class="Block-content">
 
-        <div class="<?php echo implode(' ', $grid_classes); ?>">
+        <div class="Block-content-inner">
 
-            <?php if ($text_cell_left) : ?>
+            <div class="<?php echo implode(' ', $grid_classes); ?>">
 
-                <?php include locate_template('templates/blocks/split_image_text/text.php'); ?>
+                <?php if ($text_cell_left) : ?>
 
-                <?php include locate_template('templates/blocks/split_image_text/image.php'); ?>
+                    <?php include locate_template('templates/blocks/split_image_text/text.php'); ?>
 
-            <?php else : ?>
+                    <?php include locate_template('templates/blocks/split_image_text/image.php'); ?>
 
-                <?php include locate_template('templates/blocks/split_image_text/image.php'); ?>
+                <?php else : ?>
 
-                <?php include locate_template('templates/blocks/split_image_text/text.php'); ?>
+                    <?php include locate_template('templates/blocks/split_image_text/image.php'); ?>
 
-            <?php endif; ?>
+                    <?php include locate_template('templates/blocks/split_image_text/text.php'); ?>
+
+                <?php endif; ?>
+
+            </div>
 
         </div>
 

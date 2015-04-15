@@ -248,6 +248,29 @@
                             "default_value": ""
                         },
                         {
+                            "key": "field_552e951815a93",
+                            "label": "Width",
+                            "name": "text_width",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "false": "Normal: max-width of normal page column",
+                                "half": "Half: half-width of screen"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "false",
+                            "layout": "horizontal"
+                        },
+                        {
                             "key": "field_552e76530cd56",
                             "label": "Horizontal placement",
                             "name": "text_placement_horizontal",
@@ -255,9 +278,17 @@
                             "type": "radio",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_552e951815a93",
+                                        "operator": "==",
+                                        "value": "half"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
-                                "width": 50,
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
@@ -281,7 +312,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": 50,
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
@@ -844,5 +875,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1429111262
+    "modified": 1429116353
 }
