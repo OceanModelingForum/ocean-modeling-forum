@@ -37,6 +37,6 @@ if ($text_alignment) $classes[] = 'u-align--' . $text_alignment;
 
 <div class="<?php echo implode(' ', $classes); ?>" style="<?php echo implode(' ', $styles); ?>">
 
-    <?php get_template_part('templates/blocks/shared/content'); ?>
+    <?php include locate_template('templates/blocks/shared/content.php'); ?>
 
 </div>

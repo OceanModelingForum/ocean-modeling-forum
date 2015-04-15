@@ -3,6 +3,7 @@
 /**
  * Display a split text/image block.
  */
+$id = sanitize_title(get_sub_field('title'));
 
  /**
   * Collect dynamic element classes.
@@ -71,7 +72,7 @@ if ($text_color !== 'custom') $block_classes[] = 'Block--text-' . $text_color;
 
 ?>
 
-<section class="<?php echo implode(' ', $block_classes); ?>">
+<section class="<?php echo implode(' ', $block_classes); ?>" id="<?php echo $id; ?>">
 
     <div class="Block-content">
 

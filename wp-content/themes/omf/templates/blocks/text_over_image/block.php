@@ -3,6 +3,7 @@
 /**
  * Display a text over image block.
  */
+$id = sanitize_title(get_sub_field('title'));
 
 /**
 * Collect dynamic element classes.
@@ -53,7 +54,9 @@ if ($text_color !== 'custom') $block_classes[] = 'Block--text-' . $text_color;
 
 ?>
 
-<section class="<?php echo implode(' ', $block_classes); ?>" style="<?php echo implode(' ', $block_styles); ?>">
+<section class="<?php echo implode(' ', $block_classes); ?>" style="<?php echo implode(' ', $block_styles); ?>" id="<?php echo $id; ?>">
+
+    <div class="Block-header"></div>
 
     <div class="Block-content">
 
@@ -94,6 +97,30 @@ if ($text_color !== 'custom') $block_classes[] = 'Block--text-' . $text_color;
                 <?php endif; ?>
 
             </div>
+
+        </div>
+
+    </div>
+
+    <div class="Block-footer">
+
+        <div class="Block-footer-inner">
+
+            <?php if (isset($next_values[$id])) : ?>
+
+                <div class="u-align--center">
+
+                    <a class="Button Button--dark Button--arrow Button--arrow-down" href="#<?php echo $next_values[$id]['id']; ?>">
+
+                        <div class="Button-title"><?php echo $next_values[$id]['title']; ?></div>
+
+                        <svg class="Button-icon"><use xlink:href="#icon-chevron-down"></use></svg>
+
+                    </a>
+
+                </div>
+
+            <?php endif; ?>
 
         </div>
 
