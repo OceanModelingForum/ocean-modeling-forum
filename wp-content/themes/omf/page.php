@@ -6,9 +6,64 @@
 
 get_header();
 
-get_template_part('templates/pages/banner');
+$banner_classes = array(
+    'Block'
+);
+
+$banner_styles = array();
+
+$image = get_field('image');
 
 ?>
+
+<section class="<?php echo implode(' ', $banner_classes); ?>" style="<?php echo implode(' ', $banner_styles); ?>">
+
+    <div class="Block-header"></div>
+
+    <div class="Block-content">
+
+        <div class="Block-content-inner u-align--bottom">
+
+            <div class="u-container">
+
+                <div class="Block-container u-align--center">
+
+                Hi
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="Block-footer">
+
+        <div class="Block-footer-inner">
+
+            <?php if (isset($next_block)) : ?>
+
+                <div class="u-align--center">
+
+                    <a class="Button Button--dark Button--arrow Button--arrow-down" href="#<?php echo $next_block['id']; ?>">
+
+                        <div class="Button-title"><?php echo $next_block['title']; ?></div>
+
+                        <svg class="Button-icon"><use xlink:href="#icon-chevron-down"></use></svg>
+
+                    </a>
+
+                </div>
+
+            <?php endif; ?>
+
+        </div>
+
+    </div>
+
+</section>
 
 <div class="Page" role="main">
 
