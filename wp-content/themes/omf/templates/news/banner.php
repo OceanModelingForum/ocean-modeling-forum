@@ -1,31 +1,49 @@
 <?php
 
-use OMF\Block;
-
 $blog_id = get_option('page_for_posts');
 
-$image = get_field('image', $blog_id);
+$banner_classes = array(
+    'Block',
+    'Block--height-half',
+    'Block--text-light'
+);
+
+$banner_styles = array();
 
 /**
- * Banner block
+ * Banner image.
  */
-$args = array(
-    'type' => 'normal',
-    'image' => $image['sizes']['large'],
-    'image_placement' => 'background',
-    'text_placement_vertical' => 'bottom',
-    'text_placement_horizontal' => 'left',
-    'text_width' => 'contain',
-    'image_caption' => $image['caption'],
-    'headline' => get_the_title($blog_id),
-);
+$image = get_field('image', $blog_id);
+if ($image) $banner_styles[] = 'background-image: url(' . $image['sizes']['large'] . ');';
 
-$attributes = array(
-    'height' => 'half',
-    'text' => 'light',
-    'background' => 'dark'
-);
+/**
+ * Title.
+ */
+$title = get_the_title($blog_id);
 
-$banner = new Block($args, $attributes);
+?>
 
-$banner->show();
+<section class="<?php echo implode(' ', $banner_classes); ?>" style="<?php echo implode(' ', $banner_styles); ?>">
+
+    <div class="Block-header"></div>
+
+    <div class="Block-content">
+
+        <div class="Block-content-inner u-align--bottom">
+
+            <div class="u-container">
+
+                <div class="Block-container u-align--left">
+
+                    <h1 class="Block-headline"><?php echo apply_filters('the_title', $title); ?></h1>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
