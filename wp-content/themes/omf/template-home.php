@@ -1,27 +1,21 @@
 <?php
 
 /**
- * Template name: Home page
+ * Template Name: Home Page
  *
  * Lay out content using ACF block type.
  */
 
-use OMF\Block;
-
 get_header();
 
 /**
- * Get the title and id of the first repeater, for use with next arrow
+ * Get the title and id of the next block, for the next arrow.
  */
-$count = 0;
-
-$blocks = get_field('blocks');
+$blocks = get_field('content_blocks');
 
 if ($blocks)
 {
     $first_block = $blocks[0];
-
-
 
     $first_block_title = apply_filters('the_title', $first_block['title']);
     $first_block_id = sanitize_title($first_block_title);
@@ -33,34 +27,83 @@ if ($blocks)
 }
 
 /**
- * Handle banner
+ * Build classes and styles.
  */
-
-$image = get_field('image');
-
-$args = array(
-    'type' => 'normal',
-    'image' => $image['sizes']['large'],
-    'image_placement' => 'background',
-    'text_placement_vertical' => 'middle',
-    'text_placement_horizontal' => 'center',
-    'text_width' => 'contain',
-    'text_alignment' => 'center',
-    'extra' => apply_filters('the_title', do_shortcode(get_field('text'))),
-    'show_next_arrow' => true,
-    'next_block' => isset($next_block) ? $next_block : false,
-    'image_caption' => $image['caption'],
+$banner_classes = array(
+    'Block',
+    'Block--height-full',
+    'Block--text-light'
 );
 
-$attributes = array(
-    'height' => 'full',
-    'text' => 'light',
-);
+$banner_styles = array();
 
-$banner = new Block($args, $attributes);
+/**
+ * Handle banner.
+ */
+$banner = get_field('image');
 
-$banner->show();
+if (isset($banner['sizes'])) $banner_styles[] = 'background-image: url(' . $banner['sizes']['large'] . ');';
 
-get_template_part('templates/blocks/repeater');
+/**
+ * Content fields.
+ */
+$text = get_field('text');
 
-get_footer();
+?>
+
+<section class="<?php echo implode(' ', $banner_classes); ?>" style="<?php echo implode(' ', $banner_styles); ?>">
+
+    <div class="Block-header"></div>
+
+    <div class="Block-content">
+
+        <div class="Block-content-inner u-align--middle">
+
+            <div class="u-container">
+
+                <div class="Block-container u-align--center">
+
+                    <?php if ($text) : ?>
+
+                        <p class="Block-lede Block-lede--extra"><?php echo apply_filters('the_title', do_shortcode($text)); ?></p>
+
+                    <?php endif; ?>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="Block-footer">
+
+        <div class="Block-footer-inner">
+
+            <?php if (isset($next_block)) : ?>
+
+                <div class="u-align--center">
+
+                    <a class="Button Button--dark Button--arrow Button--arrow-down" href="#<?php echo $next_block['id']; ?>">
+
+                        <div class="Button-title"><?php echo $next_block['title']; ?></div>
+
+                        <svg class="Button-icon"><use xlink:href="#icon-chevron-down"></use></svg>
+
+                    </a>
+
+                </div>
+
+            <?php endif; ?>
+
+        </div>
+
+    </div>
+
+</section>
+
+<?php get_template_part('templates/blocks/controller'); ?>
+
+<?php get_footer(); ?>

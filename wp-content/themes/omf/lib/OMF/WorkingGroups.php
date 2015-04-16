@@ -60,4 +60,9 @@ class WorkingGroups {
         return $query;
     }
 
+    public function find()
+    {
+        
+    }
+
 }

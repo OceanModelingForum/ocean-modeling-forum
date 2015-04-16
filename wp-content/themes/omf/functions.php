@@ -28,6 +28,7 @@ $config = ThemeConfig::getInstance();
 
 $includes = array(
     'lib/shortcodes.php',
+    'lib/files.php',
 );
 
 foreach ($includes as $include)

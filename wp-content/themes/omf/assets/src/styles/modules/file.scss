@@ -1,0 +1,54 @@
+
+.File {
+    display: inline-block;
+}
+
+.File-inner {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+    border-radius: $border-radius;
+
+    &:hover {
+        background: rgba(0,0,0,0.2);
+        color: inherit !important;
+
+        .Block--background-medium &,
+        .Block--background-light & {
+            background: rgba(0,0,0,0.15);
+        }
+    }
+}
+
+.File-icon {
+
+    svg {
+        max-width: 4rem;
+        max-height: 4rem;
+        fill: #fff;
+        opacity: 0.6;
+
+        .Block--background-medium &,
+        .Block--background-light & {
+            fill: $text-blue;
+        }
+    }
+
+}
+
+.File-header {
+
+}
+
+.File-title {
+    text-align: center;
+}
+
+.File-description {
+    @include font-size(16);
+}
+
+.File-size {
+    @include caps;
+}

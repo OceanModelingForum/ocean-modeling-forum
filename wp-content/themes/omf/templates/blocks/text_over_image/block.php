@@ -3,6 +3,7 @@
 /**
  * Display a text over image block.
  */
+
 $id = sanitize_title(get_sub_field('title'));
 
 /**
