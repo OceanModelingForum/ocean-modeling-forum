@@ -51,6 +51,7 @@ $title = get_sub_field('title');
 $text = get_sub_field('text');
 
 
+
 ?>
 <section class="<?php echo implode(' ', $block_classes); ?>" style="<?php echo implode(' ', $block_styles); ?>" id="<?php echo $id; ?>">
 

@@ -128,7 +128,7 @@
                             "name": "image",
                             "prefix": "",
                             "type": "image",
-                            "instructions": "The background image.",
+                            "instructions": "The background image. Should be at least 1000px wide.",
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -145,7 +145,7 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": "jpg, jpeg, png, gif"
+                            "mime_types": "jpg, jpeg, png, gif, JPG, JPEG, PNG, GIF"
                         },
                         {
                             "key": "field_552e756d0cd55",
@@ -533,7 +533,7 @@
                             "name": "image",
                             "prefix": "",
                             "type": "image",
-                            "instructions": "The background image.",
+                            "instructions": "The background image. Should be at least 1000px wide.",
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -550,7 +550,7 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": "jpg, jpeg, png, gif"
+                            "mime_types": "jpg, jpeg, png, gif, JPG, JPEG, PNG, GIF"
                         },
                         {
                             "key": "field_552e7c2cd082c",
@@ -1657,7 +1657,7 @@
                             "name": "image",
                             "prefix": "",
                             "type": "image",
-                            "instructions": "",
+                            "instructions": "The background image. Should be at least 1000px wide.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1714,5 +1714,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1429198550
+    "modified": 1429198918
 }
