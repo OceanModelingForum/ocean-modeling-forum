@@ -1679,6 +1679,243 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "553029f878c9f",
+                    "name": "profiles",
+                    "label": "Profiles",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_553029f878ca0",
+                            "label": "General",
+                            "name": "",
+                            "prefix": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top"
+                        },
+                        {
+                            "key": "field_553029f878ca1",
+                            "label": "Title",
+                            "name": "title",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "The title of this block. Also used as the text shown in the 'next' arrow of the previous block. **Must be unique for this page.**",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_553029f878ca2",
+                            "label": "Next arrow",
+                            "name": "show_next_arrow",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Show \"next\" arrow",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_553029f878ca3",
+                            "label": "Text",
+                            "name": "",
+                            "prefix": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top"
+                        },
+                        {
+                            "key": "field_553029f878ca4",
+                            "label": "Text color",
+                            "name": "text_color",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "Adjust for contrast.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "light": "Light",
+                                "dark": "Dark",
+                                "custom": "Custom"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "dark",
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_553029f878ca5",
+                            "label": "Text color (custom)",
+                            "name": "text_color_custom",
+                            "prefix": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_553029f878ca4",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_553029f878ca6",
+                            "label": "Background color",
+                            "name": "background_color",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "light": "Light",
+                                "medium": "Medium",
+                                "dark": "Dark",
+                                "custom": "Custom"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "light",
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_553029f878ca7",
+                            "label": "Background color (custom)",
+                            "name": "background_color_custom",
+                            "prefix": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_553029f878ca6",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_553029f878ca8",
+                            "label": "Alignment",
+                            "name": "text_alignment",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "left",
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_553029f878ca9",
+                            "label": "Text",
+                            "name": "text",
+                            "prefix": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0
+                        },
+                        {
+                            "key": "field_55302a2078cb1",
+                            "label": "Profiles",
+                            "name": "",
+                            "prefix": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -1714,5 +1951,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1429198918
+    "modified": 1429219885
 }

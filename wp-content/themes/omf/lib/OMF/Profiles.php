@@ -3,7 +3,7 @@
 use ElContraption\WpPostType\PostType;
 use WP_Query;
 
-class WorkingGroups {
+class Profiles {
 
     /**
      * Instance of this class
@@ -26,7 +26,7 @@ class WorkingGroups {
 
     protected function __construct()
     {
-        // Register post type
+        // Register post type.
         $this->registerPostType();
     }
 
@@ -34,36 +34,15 @@ class WorkingGroups {
     {
         $args = array(
             'public' => true,
-            'menu_icon' => 'dashicons-admin-site',
+            'menu_icon' => 'dashicons-groups',
+            //'supports' => array('editor'),
             'rewrite' => array(
-                'slug' => 'working-groups',
+                'slug' => 'profiles',
                 'with_front' => false,
             )
         );
 
-        $postType = new PostType('working_group', array(), $args);
-    }
-
-    public function all()
-    {
-        $args = array(
-            'post_type' => 'working_group',
-            'posts_per_page' => -1,
-            'meta_key'  => 'group_code',
-            'orderby' => 'meta_value',
-            'order'     => 'ASC'
-        );
-
-        // Default
-
-        $query = new WP_Query($args);
-
-        return $query;
-    }
-
-    public function find()
-    {
-
+        $postType = new PostType('profile', array(), $args);
     }
 
 }

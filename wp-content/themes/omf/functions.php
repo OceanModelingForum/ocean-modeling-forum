@@ -2,6 +2,7 @@
 
 use \ElContraption\WpPostType\PostType;
 use \ElContraption\WpThemeConfig\ThemeConfig;
+use \OMF\Profiles;
 use \OMF\WorkingGroups;
 
 /*
@@ -43,6 +44,14 @@ foreach ($includes as $include)
 */
 
 WorkingGroups::getInstance();
+
+/*
+|--------------------------------------------------------------------------
+| Initialize Profiles
+|--------------------------------------------------------------------------
+*/
+
+Profiles::getInstance();
 
 /*
 |--------------------------------------------------------------------------
