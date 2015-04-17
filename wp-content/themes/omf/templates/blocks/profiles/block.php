@@ -73,7 +73,7 @@ $text = get_sub_field('text');
 
             <div class="u-container">
 
-                <div class="Grid Grid--collapsable">
+                <div class="Grid Grid--collapsable Grid--align-middle">
 
                     <?php if ($profiles) : ?>
 
