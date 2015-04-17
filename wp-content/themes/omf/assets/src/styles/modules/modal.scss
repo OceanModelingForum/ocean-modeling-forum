@@ -18,14 +18,14 @@
     /**
      * Transition state: re-position
      */
-    .Modal--transition & {
+    .State--modal-transition & {
         top: 0;
     }
 
     /**
      * Active state: make visible
      */
-    .Modal--active & {
+    &.Modal--active {
         top: 0;
         opacity: 1;
     }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Display a block that shows dates in a schedule.
+ * Display a block that shows member profiles.
  */
 
 $id = sanitize_title(get_sub_field('title'));
@@ -33,23 +33,15 @@ $background_color = get_sub_field('background_color');
 if ($background_color !== 'custom') $block_classes[] = 'Block--background-' . $background_color;
 
 /**
- * Background image
+ * Profiles
  */
-$image = get_sub_field('image');
-if ($image) $block_styles[] = 'background-image: url(' . $image['sizes']['large'] . ');';
-
-
-/**
- * Events
- */
-$events = get_sub_field('events');
+$profiles = get_sub_field('profiles');
 
 /**
  * Content fields.
  */
 $title = get_sub_field('title');
 $text = get_sub_field('text');
-
 
 
 ?>
@@ -79,15 +71,31 @@ $text = get_sub_field('text');
 
         <div class="Block-content-inner u-align--<?php echo $text_placement_vertical; ?>">
 
-            <div class="Events">
+            <div class="u-container">
 
-                <div class="u-container u-container--small">
+                <div class="Grid Grid--collapsable">
 
-                    <?php if ($events) : ?>
+                    <?php if ($profiles) : ?>
 
-                        <?php foreach ($events as $event) : ?>
+                        <?php foreach ($profiles as $profile) : ?>
 
-                            <?php include locate_template('templates/blocks/schedule/event.php'); ?>
+                            <?php if (count($profiles) == 1) : ?>
+
+                                <div class="Grid-cell u-size-4of12"></div>
+
+                            <?php elseif(count($profiles) == 2) : ?>
+
+                                <div class="Grid-cell u-size-1of12"></div>
+
+                            <?php else : ?>
+
+                            <?php endif; ?>
+
+                            <div class="Grid-cell u-size-4of12">
+
+                                <?php include locate_template('templates/blocks/profiles/profile.php'); ?>
+
+                            </div>
 
                         <?php endforeach; ?>
 
@@ -118,8 +126,6 @@ $text = get_sub_field('text');
                         <svg class="Button-icon"><use xlink:href="#icon-chevron-down"></use></svg>
 
                     </a>
-
-                    <br><br>
 
                 </div>
 

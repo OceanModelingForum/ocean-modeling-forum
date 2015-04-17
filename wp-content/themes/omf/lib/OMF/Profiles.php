@@ -35,7 +35,6 @@ class Profiles {
         $args = array(
             'public' => true,
             'menu_icon' => 'dashicons-groups',
-            //'supports' => array('editor'),
             'rewrite' => array(
                 'slug' => 'profiles',
                 'with_front' => false,

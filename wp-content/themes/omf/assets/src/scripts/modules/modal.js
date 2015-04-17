@@ -5,21 +5,22 @@ var tappy = require('tappy-js');
  * Create a new Modal instance.
  *
  * @param {Object} $element
- * @param {Object} options
+ * @param {Object} id
  */
-var Modal = function($element) {
+var Modal = function($element, id) {
 
     this.$el = $element;
 
-    this.$modal = $('#' + this.$el.data('id'));
+    this.$modal = $('#' + id);
 
     this.init();
 };
 
 Modal.prototype = {
     $body: $('body'),
-    bodyTransitionClass: 'Modal--transition',
-    bodyActiveClass: 'Modal--active',
+    bodyTransitionClass: 'State--modal-transition',
+    bodyActiveClass: 'State--modal-active',
+    modalActiveClass: 'Modal--active',
     transitionDuration: 150,
     isActive: false
 };
@@ -63,14 +64,14 @@ Modal.prototype.init = function() {
 };
 
 /**
- * Toggle menu open/close state
+ * Toggle modal open/close state
  */
 Modal.prototype.toggle = function() {
     this.isActive ? this.close() : this.open();
 };
 
 /**
- * Open the menu
+ * Open the modal
  */
 Modal.prototype.open = function() {
 
@@ -78,6 +79,7 @@ Modal.prototype.open = function() {
 
     this.$body.addClass(this.bodyTransitionClass);
     this.$body.addClass(this.bodyActiveClass);
+    this.$modal.addClass(this.modalActiveClass);
 
     this.transitionEnd(function() {
         _this.$body.removeClass(_this.bodyTransitionClass);
@@ -106,6 +108,7 @@ Modal.prototype.close = function(url) {
 
     this.$body.addClass(this.bodyTransitionClass);
     this.$body.removeClass(this.bodyActiveClass);
+    this.$modal.removeClass(this.modalActiveClass);
 
     this.transitionEnd(function() {
         _this.$body.removeClass(_this.bodyTransitionClass);
@@ -121,9 +124,12 @@ Modal.prototype.close = function(url) {
  * @param  {String}     id
  * @return {Object}     new Modal()
  */
-$.fn.modal = function(id) {
+$.fn.modal = function() {
     return this.each(function() {
-        new Modal($(this));
+        var $el = $(this);
+        var id = $el.data('modal');
+
+        new Modal($el, id);
     });
 };
 

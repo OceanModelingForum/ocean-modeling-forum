@@ -1912,6 +1912,50 @@
                                 "id": ""
                             },
                             "placement": "top"
+                        },
+                        {
+                            "key": "field_55304e35add5f",
+                            "label": "Profiles",
+                            "name": "profiles",
+                            "prefix": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "min": "",
+                            "max": "",
+                            "layout": "table",
+                            "button_label": "Add Profile",
+                            "sub_fields": [
+                                {
+                                    "key": "field_55304e3eadd60",
+                                    "label": "Profile",
+                                    "name": "profile",
+                                    "prefix": "",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "profile"
+                                    ],
+                                    "taxonomy": "",
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "object",
+                                    "ui": 1
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -1951,5 +1995,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1429219885
+    "modified": 1429229168
 }

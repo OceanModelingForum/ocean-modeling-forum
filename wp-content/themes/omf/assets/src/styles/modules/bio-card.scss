@@ -1,19 +1,24 @@
 
 .Bio-card {
     display: block;
-    padding: 0.5rem;
-    text-decoration: none;
-    //color: $text;
     border-radius: $border-radius;
 }
 
-a.Bio-card {
-    color: inherit;
-}
+.Bio-card-inner {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    border-radius: $border-radius;
 
-a.Bio-card:hover {
-    background: rgba(0,0,0,0.15);
-    color: inherit !important;
+    &:hover {
+        background: rgba(0,0,0,0.2);
+        color: inherit !important;
+
+        .Block--background-medium &,
+        .Block--background-light & {
+            background: rgba(0,0,0,0.15);
+        }
+    }
 }
 
 .Bio-card-image {
