@@ -30,6 +30,7 @@ $config = ThemeConfig::getInstance();
 $includes = array(
     'lib/shortcodes.php',
     'lib/files.php',
+    'lib/widgets.php',
 );
 
 foreach ($includes as $include)

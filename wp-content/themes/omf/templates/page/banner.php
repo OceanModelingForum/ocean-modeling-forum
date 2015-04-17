@@ -1,10 +1,8 @@
 <?php
 
 /**
- * Display the news banner.
+ * Display the page banner.
  */
-
-$blog_id = get_option('page_for_posts');
 
 $banner_classes = array(
     'Block',
@@ -17,13 +15,13 @@ $banner_styles = array();
 /**
  * Banner image.
  */
-$image = get_field('image', $blog_id);
+$image = get_field('image');
 if ($image) $banner_styles[] = 'background-image: url(' . $image['sizes']['large'] . ');';
 
 /**
  * Title.
  */
-$title = get_the_title($blog_id);
+$title = get_the_title();
 
 ?>
 
