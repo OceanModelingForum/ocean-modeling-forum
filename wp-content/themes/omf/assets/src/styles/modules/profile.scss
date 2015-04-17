@@ -3,7 +3,13 @@
  * The profile modal.
  */
 .Profile {
-    color: $text-extra-light;
+    color: $text-blue;
+}
+
+.Profile-inner {
+    padding: 1rem;
+    background: #fff;
+    border-radius: $border-radius;
 }
 
 .Profile-image {
@@ -20,5 +26,5 @@
 }
 
 .Profile-header {
-    padding-left: 2rem;
+    padding-left: 3rem;
 }

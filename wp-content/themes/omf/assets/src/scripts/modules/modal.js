@@ -61,6 +61,17 @@ Modal.prototype.init = function() {
         var keycode = event.keycode ? event.keycode : event.which;
         activeKeys[keycode] = false;
     });
+
+    // Handle clicking on modal
+    this.$modal.on('tap', function(event) {
+
+        var $el = $(event.target);
+
+        if ($(event.target).parents('[data-modal-prevent-dismiss]').length === 0) {
+            _this.toggle();
+        }
+
+    });
 };
 
 /**
