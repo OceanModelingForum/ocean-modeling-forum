@@ -30,7 +30,7 @@
 
                 <?php endif; ?>
 
-                <p class="Event-location">Seattle, WA</p>
+                <p class="Event-location"><?php echo apply_filters('the_title', $event['location']); ?></p>
 
             </div>
 
