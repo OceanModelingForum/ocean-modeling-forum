@@ -45,6 +45,7 @@
  */
 .Block-header {
     display: table-row;
+    padding: 1rem;
 }
 
 .Block-header-inner {
@@ -156,7 +157,7 @@
     }
 
     &.Block-lede--extra {
-        @include font-size(30);
+        @include font-size(24);
 
         @include bp-desktop {
             @include font-size(48);

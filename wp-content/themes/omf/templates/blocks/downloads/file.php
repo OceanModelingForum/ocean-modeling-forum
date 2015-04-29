@@ -6,7 +6,9 @@
 
 $file = $file['file'];
 
-$size = filesize(get_attached_file($file['ID']));
+$file_path = get_attached_file($file['ID']);
+
+$size = file_exists($file_path) ? filesize($file_path) : false;
 
 ?>
 
