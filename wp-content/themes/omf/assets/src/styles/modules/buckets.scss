@@ -10,10 +10,6 @@
         position: center;
         size: cover;
     }
-
-    &:hover {
-        background-color: rgba(0,0,0,0.25);
-    }
 }
 
 .Bucket-link {
@@ -25,26 +21,16 @@
     .Buckets--rounded & {
         border-radius: $border-radius;
     }
-
-    .Bucket:hover & {
-        color: #fff !important;
-    }
 }
 
+a.Bucket-link:hover {
+    background-color: rgba(0,0,0,0.25);
+    color: #fff !important;
+}
+
+
 .Bucket-icon {
-
-    svg {
-        width: 4rem;
-        height: 4rem;
-        fill: $text;
-        fill: rgba(0,0,0,0.75);
-    }
-
-    .Block--dark & svg {
-        fill: #fff;
-        fill: rgba(255,255,255,0.75);
-    }
-
+    display: block;
 }
 
 .Bucket-header {
