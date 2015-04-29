@@ -12,7 +12,7 @@
 
         <div class="Profile-inner" data-modal-prevent-dismiss="inner">
 
-            <div class="Grid Grid--align-top">
+            <div class="Grid Grid--collapsable Grid--align-top">
 
                 <div class="Grid-cell u-size-4of12">
 

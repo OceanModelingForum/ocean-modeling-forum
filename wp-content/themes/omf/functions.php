@@ -31,6 +31,7 @@ $includes = array(
     'lib/shortcodes.php',
     'lib/files.php',
     'lib/widgets.php',
+    'lib/posts.php',
 );
 
 foreach ($includes as $include)
