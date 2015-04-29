@@ -20,35 +20,27 @@ if ($image) $banner_styles[] = 'background-image: url(' . $image['sizes']['large
 
     <a class="Card-link" href="<?php the_permalink(); ?>">
 
-        <section class="Banner" style="<?php echo implode(' ', $banner_styles); ?>">
+        <div class="Card-content" style="<?php echo implode(' ', $banner_styles); ?>">
 
-            <header class="Banner-header">
+            <div class="Card-content-inner u-align--bottom">
 
-                <div class="Banner-header-content">
+                <?php if ($code) : ?>
 
-                    <div class="u-container">
+                    <p class="Card-title"><?php echo apply_filters('the_title', do_shortcode($code)); ?></p>
 
-                        <?php if ($code) : ?>
+                <?php endif; ?>
 
-                            <p class="Banner-supertitle"><?php echo apply_filters('the_title', $code); ?></p>
+                <h1 class="Card-headline"><?php the_title(); ?></h1>
 
-                        <?php endif; ?>
+                <?php if ($lede) : ?>
 
-                        <h1 class="Banner-title"><?php the_title(); ?></h1>
+                    <p class="Card-lede"><?php echo apply_filters('the_title', $lede); ?></p>
 
-                        <?php if ($lede) : ?>
+                <?php endif; ?>
 
-                            <p class="Banner-lede"><?php echo apply_filters('the_title', $lede); ?></p>
+            </div>
 
-                        <?php endif; ?>
-
-                    </div>
-
-                </div>
-
-            </header>
-
-        </section>
+        </div>
 
     </a>
 

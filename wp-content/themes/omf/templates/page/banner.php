@@ -43,7 +43,6 @@ $title = get_the_title();
 
             </div>
 
-
         </div>
 
     </div>
