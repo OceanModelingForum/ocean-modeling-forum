@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "button_label": "Add File",
+            "button_label": "Add Block",
             "min": "",
             "max": "",
             "layouts": [
@@ -2295,5 +2295,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1430339597
+    "modified": 1430340812
 }
