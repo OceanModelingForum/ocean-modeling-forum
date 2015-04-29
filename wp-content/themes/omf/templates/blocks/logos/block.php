@@ -43,6 +43,8 @@ $text = get_sub_field('text');
  */
 $logos = get_sub_field('logos');
 
+$logo_groups = array_chunk($logos, 3);
+
 
 ?>
 <section class="<?php echo implode(' ', $block_classes); ?>" style="<?php echo implode(' ', $block_styles); ?>" id="<?php echo $id; ?>">
@@ -73,11 +75,11 @@ $logos = get_sub_field('logos');
 
             <div class="u-container">
 
-                <div class="Grid Grid--table Grid--collapsable Grid--align-middle u-table-layout-fixed">
+                <?php foreach ($logo_groups as $logo_group) : ?>
 
-                    <?php if ($logos && !empty($logos)) : ?>
+                    <div class="Grid Grid--table Grid--collapsable Grid--align-middle u-table-layout-fixed">
 
-                        <?php foreach ($logos as $logo) : ?>
+                        <?php foreach ($logo_group as $logo) : ?>
 
                             <div class="Grid-cell u-align--center">
 
@@ -87,9 +89,9 @@ $logos = get_sub_field('logos');
 
                         <?php endforeach; ?>
 
-                    <?php endif; ?>
+                    </div>
 
-                </div>
+                <?php endforeach; ?>
 
             </div>
 
