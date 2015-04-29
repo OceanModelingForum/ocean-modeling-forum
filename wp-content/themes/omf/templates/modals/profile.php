@@ -12,7 +12,7 @@
 
         <div class="Profile-inner" data-modal-prevent-dismiss="inner">
 
-            <div class="Grid Grid--align-middle">
+            <div class="Grid Grid--align-top">
 
                 <div class="Grid-cell u-size-4of12">
 
@@ -28,7 +28,7 @@
 
                     <header class="Bio-card-header">
 
-                        <h3 class="Bio-card-name"><?php echo $title; ?></h3>
+                        <h3 class="Bio-card-name"><?php echo $name; ?></h3>
 
                         <?php if ($title) : ?>
 
@@ -45,6 +45,8 @@
                     </header>
 
                     <?php if ($bio) : ?>
+
+                        <br>
 
                         <div class="Bio-card-content">
 
