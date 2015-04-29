@@ -5,18 +5,24 @@
  */
 $id = sanitize_title(get_sub_field('title'));
 
- /**
-  * Collect dynamic element classes.
-  */
- $block_classes = array(
-     'Block'
- );
+/**
+* Collect dynamic element classes.
+*/
+$block_classes = array(
+    'Block'
+);
 
- $grid_classes = array(
-     'Grid',
-     'Grid--collapsable',
-     'Grid--table',
- );
+$grid_classes = array(
+    'Grid',
+    'Grid--collapsable',
+    'Grid--table',
+);
+
+/**
+ * Block height
+ */
+$block_height = get_sub_field('height');
+if ($block_height) $block_classes[] = 'Block--height-' . $block_height;
 
 /**
  * Handle grid cell size.
