@@ -38,6 +38,18 @@ if ($background_color !== 'custom') $block_classes[] = 'Block--background-' . $b
 $image = get_sub_field('image');
 if ($image) $block_styles[] = 'background-image: url(' . $image['sizes']['large'] . ');';
 
+/**
+ * Image positioning
+ */
+$image_bias = get_sub_field('image_bias');
+if ($image_bias) $block_styles[] = 'background-position: ' . str_replace('-', ' ', $image_bias) . ';';
+
+/**
+ * Image sizing
+ */
+$image_size = get_sub_field('image_size');
+if ($image_size) $block_styles[] = 'background-size: ' . $image_size . ';';
+
 
 /**
  * Events

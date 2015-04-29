@@ -165,15 +165,15 @@
                                 "top-left": "Top-left",
                                 "top-center": "Top-center",
                                 "top-right": "Top-right",
-                                "middle-left": "Middle-left",
-                                "middle-center": "Middle-center",
-                                "middle-right": "Middle-right",
+                                "center-left": "Middle-left",
+                                "center-center": "Middle-center",
+                                "center-right": "Middle-right",
                                 "bottom-left": "Bottom-left",
                                 "bottom-center": "Bottom-center",
                                 "bottom-right": "Bottom-right"
                             },
                             "default_value": {
-                                "middle-center": "middle-center"
+                                "center-center": "center-center"
                             },
                             "allow_null": 0,
                             "multiple": 0,
@@ -184,8 +184,31 @@
                             "readonly": 0
                         },
                         {
+                            "key": "field_5541615920e9b",
+                            "label": "Image size",
+                            "name": "image_size",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "Cover: the image will be scaled to be as small as possible while ensuring both its dimensions are greater than or equal to the corresponding dimensions of the background positioning area.\r\n\r\nContain: the image will be scaled to be as large as possible while ensuring both its dimensions are less than or equal to the corresponding dimensions of the background positioning area.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "cover": "Cover",
+                                "contain": "Contain"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "cover",
+                            "layout": "horizontal"
+                        },
+                        {
                             "key": "field_552e7521b92c1",
-                            "label": "Text",
+                            "label": "Text and background",
                             "name": "",
                             "prefix": "",
                             "type": "tab",
@@ -235,6 +258,55 @@
                                 [
                                     {
                                         "field": "field_552e7497e313f",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_554162dd27f1e",
+                            "label": "Background color",
+                            "name": "background_color",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "light": "Light",
+                                "medium": "Medium",
+                                "dark": "Dark",
+                                "custom": "Custom"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "light",
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_5541630227f1f",
+                            "label": "Background color (custom)",
+                            "name": "background_color_custom",
+                            "prefix": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_554162dd27f1e",
                                         "operator": "==",
                                         "value": "custom"
                                     }
@@ -570,15 +642,15 @@
                                 "top-left": "Top-left",
                                 "top-center": "Top-center",
                                 "top-right": "Top-right",
-                                "middle-left": "Middle-left",
-                                "middle-center": "Middle-center",
-                                "middle-right": "Middle-right",
+                                "center-left": "Middle-left",
+                                "center-center": "Middle-center",
+                                "center-right": "Middle-right",
                                 "bottom-left": "Bottom-left",
                                 "bottom-center": "Bottom-center",
                                 "bottom-right": "Bottom-right"
                             },
                             "default_value": {
-                                "middle-center": "middle-center"
+                                "center-center": "center-center"
                             },
                             "allow_null": 0,
                             "multiple": 0,
@@ -589,8 +661,31 @@
                             "readonly": 0
                         },
                         {
+                            "key": "field_5541636faeb77",
+                            "label": "Image size",
+                            "name": "image_size",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "Cover: the image will be scaled to be as small as possible while ensuring both its dimensions are greater than or equal to the corresponding dimensions of the background positioning area.\r\n\r\nContain: the image will be scaled to be as large as possible while ensuring both its dimensions are less than or equal to the corresponding dimensions of the background positioning area.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "cover": "Cover",
+                                "contain": "Contain"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "cover",
+                            "layout": "horizontal"
+                        },
+                        {
                             "key": "field_552e7c2cd082d",
-                            "label": "Text",
+                            "label": "Text and background",
                             "name": "",
                             "prefix": "",
                             "type": "tab",
@@ -1377,8 +1472,108 @@
                             "default_value": 1
                         },
                         {
+                            "key": "field_552fd3477c48e",
+                            "label": "Image",
+                            "name": "",
+                            "prefix": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top"
+                        },
+                        {
+                            "key": "field_552fd3637c48f",
+                            "label": "Image",
+                            "name": "image",
+                            "prefix": "",
+                            "type": "image",
+                            "instructions": "The background image. Should be at least 1000px wide.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "jpg, jpeg, png, gif, JPG, JPEG, PNG, GIF"
+                        },
+                        {
+                            "key": "field_5541644ab24f1",
+                            "label": "Image bias",
+                            "name": "image_bias",
+                            "prefix": "",
+                            "type": "select",
+                            "instructions": "Favor an area of the image when the image is cropped on window resize. Useful when the subject is not centered.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "top-left": "Top-left",
+                                "top-center": "Top-center",
+                                "top-right": "Top-right",
+                                "center-left": "Middle-left",
+                                "center-center": "Middle-center",
+                                "center-right": "Middle-right",
+                                "bottom-left": "Bottom-left",
+                                "bottom-center": "Bottom-center",
+                                "bottom-right": "Bottom-right"
+                            },
+                            "default_value": {
+                                "center-center": "center-center"
+                            },
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
+                        },
+                        {
+                            "key": "field_554163ea638b0",
+                            "label": "Image size",
+                            "name": "image_size",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "Cover: the image will be scaled to be as small as possible while ensuring both its dimensions are greater than or equal to the corresponding dimensions of the background positioning area.\r\n\r\nContain: the image will be scaled to be as large as possible while ensuring both its dimensions are less than or equal to the corresponding dimensions of the background positioning area.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "cover": "Cover",
+                                "contain": "Contain"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "cover",
+                            "layout": "horizontal"
+                        },
+                        {
                             "key": "field_552fd29753cef",
-                            "label": "Text",
+                            "label": "Text and background",
                             "name": "",
                             "prefix": "",
                             "type": "tab",
@@ -1634,47 +1829,6 @@
                                     "disabled": 0
                                 }
                             ]
-                        },
-                        {
-                            "key": "field_552fd3477c48e",
-                            "label": "Background",
-                            "name": "",
-                            "prefix": "",
-                            "type": "tab",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "placement": "top"
-                        },
-                        {
-                            "key": "field_552fd3637c48f",
-                            "label": "Image",
-                            "name": "image",
-                            "prefix": "",
-                            "type": "image",
-                            "instructions": "The background image. Should be at least 1000px wide.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "jpg, jpeg, png, gif, JPG, JPEG, PNG, GIF"
                         }
                     ],
                     "min": "",
@@ -2295,5 +2449,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1430345256
+    "modified": 1430348897
 }

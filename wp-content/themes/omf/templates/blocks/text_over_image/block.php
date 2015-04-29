@@ -48,10 +48,32 @@ $image = get_sub_field('image');
 if ($image) $block_styles[] = 'background-image: url(' . $image['sizes']['large'] . ');';
 
 /**
+ * Image positioning
+ */
+$image_bias = get_sub_field('image_bias');
+
+if ($image_bias)
+{
+    $block_styles[] = 'background-position: ' . str_replace('-', ' ', $image_bias) . ';';
+}
+
+/**
+ * Image size
+ */
+$image_size = get_sub_field('image_size');
+if ($image_size) $block_styles[] = 'background-size: ' . $image_size . ';';
+
+/**
  * Text color.
  */
 $text_color = get_sub_field('text_color');
 if ($text_color !== 'custom') $block_classes[] = 'Block--text-' . $text_color;
+
+/**
+ * Background color.
+ */
+$background_color = get_sub_field('background_color');
+if ($background_color !== 'custom') $block_classes[] = 'Block--background-' . $background_color;
 
 ?>
 

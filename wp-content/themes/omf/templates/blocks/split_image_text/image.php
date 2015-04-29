@@ -31,6 +31,17 @@ if (isset($image['sizes']))
     $image_styles[] = 'padding-top: ' . $image_padding . '%;';
 }
 
+/**
+ * Image positioning
+ */
+$image_bias = get_sub_field('image_bias');
+if ($image_bias) $image_styles[] = 'background-position: ' . str_replace('-', ' ', $image_bias) . ';';
+
+/**
+ * Image sizing
+ */
+$image_size = get_sub_field('image_size');
+if ($image_size) $image_styles[] = 'background-size: ' . $image_size . ';';
 
 ?>
 
