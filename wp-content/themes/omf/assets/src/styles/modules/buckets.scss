@@ -32,6 +32,8 @@ a.Bucket-link:hover {
 .Bucket-icon {
     display: inline-block;
     text-align: center;
+    width: 100%;
+    max-width: 200px;
 }
 
 .Bucket-header {

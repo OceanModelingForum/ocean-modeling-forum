@@ -20,13 +20,13 @@ if ($image) $banner_styles[] = 'background-image: url(' . $image['sizes']['large
 
     <a class="Card-link" href="<?php the_permalink(); ?>">
 
-        <div class="Card-content" style="<?php echo implode(' ', $banner_styles); ?>">
+        <div class="Card-header" style="<?php echo implode(' ', $banner_styles); ?>">
 
             <div class="Card-content-inner u-align--bottom">
 
                 <?php if ($code) : ?>
 
-                    <p class="Card-title"><?php echo apply_filters('the_title', do_shortcode($code)); ?></p>
+                    <p class="Card-supertitle"><?php echo apply_filters('the_title', do_shortcode($code)); ?></p>
 
                 <?php endif; ?>
 

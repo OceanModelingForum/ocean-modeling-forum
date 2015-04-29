@@ -38,7 +38,7 @@
     }
 }
 
-.Card-content {
+.Card-header {
     display: table;
     width: 100%;
     min-height: 320px;
@@ -56,6 +56,27 @@
 }
 
 .Card-title {
+    @include font-size(20);
+
+    @include bp-desktop {
+        @include font-size(24);
+    }
+
+    a {
+        color: $text-blue;
+        text-decoration: none;
+    }
+}
+
+.Card-meta {
+    @include font-size(14);
+
+    @include bp-desktop {
+        @include font-size(16);
+    }
+}
+
+.Card-supertitle {
     //margin: 1rem 0;
     @include small-caps;
 
