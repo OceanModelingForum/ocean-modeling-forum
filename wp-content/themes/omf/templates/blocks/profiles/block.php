@@ -113,9 +113,9 @@ $text = get_sub_field('text');
 
         <div class="Block-footer-inner">
 
-            <br><br>
-
             <?php if (isset($next_values[$id])) : ?>
+
+                <br><br>
 
                 <div class="u-align--center">
 
@@ -128,6 +128,8 @@ $text = get_sub_field('text');
                     </a>
 
                 </div>
+
+                <br>
 
             <?php endif; ?>
 
