@@ -12,41 +12,41 @@
 
         <div class="Profile-inner" data-modal-prevent-dismiss="inner">
 
-            <div class="Grid Grid--collapsable Grid--align-middle">
+            <div class="Grid Grid--align-middle">
 
-                <div class="Grid-cell u-size-3of12">
+                <div class="Grid-cell u-size-4of12">
 
-                    <?php if ( ! empty($image)) : ?>
+                    <?php if ($image) : ?>
 
-                        <div class="Profile-image" style="background-image: url(<?php echo $image['sizes']['medium'] ?>);"></div>
+                        <div class="Bio-card-image" style="background-image: url(<?php echo $image['sizes']['medium']; ?>);"></div>
 
                     <?php endif; ?>
 
                 </div>
 
-                <div class="Grid-cell u-size-9of12">
+                <div class="Grid-cell u-size-8of12">
 
-                    <header class="Profile-header">
+                    <header class="Bio-card-header">
 
-                        <h2 class="Profile-name"><?php echo apply_filters('the_title', $name); ?></h2>
+                        <h3 class="Bio-card-name"><?php echo $title; ?></h3>
 
-                        <?php if ( ! empty($title)) : ?>
+                        <?php if ($title) : ?>
 
-                            <p class="Profile-title"><?php echo apply_filters('the_title', $title); ?></p>
+                            <p class="Bio-card-title"><?php echo apply_filters('the_title', $title); ?></p>
 
                         <?php endif; ?>
 
-                        <?php if ( ! empty($organization)) : ?>
+                        <?php if ($organization) : ?>
 
-                            <p class="Profile-organization"><?php echo apply_filters('the_title', $organization); ?></p>
+                            <p class="Bio-card-org"><?php echo apply_filters('the_title', $organization); ?></p>
 
                         <?php endif; ?>
 
                     </header>
 
-                    <?php if ( ! empty($bio)) : ?>
+                    <?php if ($bio) : ?>
 
-                        <div class="Profile-content">
+                        <div class="Bio-card-content">
 
                             <?php echo apply_filters('the_content', $bio); ?>
 

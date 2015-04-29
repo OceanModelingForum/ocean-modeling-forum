@@ -18,7 +18,7 @@ $modal_fields = array(
     'name' => $profile->post_title,
     'title' => $title,
     'organization' => $organization,
-    'bio' => get_field('profile', $profile->ID),
+    'bio' => get_field('text', $profile->ID),
     'image' => $image,
 );
 
