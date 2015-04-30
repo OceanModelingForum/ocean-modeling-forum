@@ -129,7 +129,7 @@ if ($background_color !== 'custom') $block_classes[] = 'Block--background-' . $b
 
         <div class="Block-footer-inner">
 
-            <?php if (isset($next_values[$id])) : ?>
+            <?php if (isset($next_values[$id]) && get_sub_field('show_next_arrow')) : ?>
 
                 <div class="u-align--center">
 

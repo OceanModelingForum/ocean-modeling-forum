@@ -6,12 +6,13 @@
 }
 
 .Button-title {
-    @include small-caps;
+    //@include small-caps;
     margin: 0 0 0.5rem;
     color: $text-light;
+    font-weight: 600;
 
     @include bp-desktop {
-        @include caps;
+        //@include caps;
     }
 }
 

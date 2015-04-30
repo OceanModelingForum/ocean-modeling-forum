@@ -18,7 +18,10 @@ if ($blocks)
     $first_block = $blocks[0];
 
     $first_block_title = apply_filters('the_title', $first_block['title']);
+    $first_block_next_text = apply_filters('the_title', $first_block['next_arrow_text']);
     $first_block_id = sanitize_title($first_block_title);
+
+    if ( ! empty($first_block_next_text)) $first_block_title = $first_block_next_text;
 
     $next_block = array(
         'title' => $first_block_title,
@@ -90,7 +93,7 @@ $lede = get_field('lede');
 
         <div class="Block-footer-inner">
 
-            <?php if (isset($next_block)) : ?>
+            <?php if (isset($next_block) && get_field('show_next_arrow')) : ?>
 
                 <div class="u-align--center">
 

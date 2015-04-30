@@ -18,8 +18,12 @@ while (have_rows('content_blocks'))
 {
     the_row();
 
-    $title = apply_filters('the_title', get_sub_field('title'));
+    $title = get_sub_field('title');
+    $next_text = get_sub_field('next_arrow_text');
+
     $id = sanitize_title($title);
+
+    $title = ! empty($next_text) ? apply_filters('the_title', $next_text) : apply_filters('the_title', $title);
 
     if ($last_id) $next_values[$last_id] = array(
         'title' => $title,
