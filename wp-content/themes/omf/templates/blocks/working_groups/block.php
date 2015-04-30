@@ -51,7 +51,7 @@ $working_groups = $wg->all();
 
 
 ?>
-<section class="<?php echo implode(' ', $block_classes); ?>" style="<?php echo implode(' ', $block_styles); ?>" id="<?php echo $block_id; ?>">
+<section class="<?php echo implode(' ', $block_classes); ?>" style="<?php echo implode(' ', $block_styles); ?>" id="<?php echo $block_id; ?>" name="<?php echo $block_id; ?>">
 
     <div class="Block-header">
 
