@@ -47,6 +47,8 @@
         size: cover;
     }
 
+    // Firefox does not support min-height on
+    // elements with display: table.
     .flexbox & {
         display: flex;
         align-items: flex-end;
