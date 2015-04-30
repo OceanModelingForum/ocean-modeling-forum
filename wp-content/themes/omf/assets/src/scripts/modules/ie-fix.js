@@ -1,11 +1,16 @@
 
-module.exports.init = function() {
-
-    imageElementHeight();
-
+var IEFix = function() {
+    //this.init();
 };
 
-var imageElementHeight = function() {
+IEFix.prototype.init = function() {
+
+    // Only for IE 
+
+    this.imageElementFix();
+};
+
+IEFix.prototype.imageElementFix = function() {
 
     var $el = $('.Image--bleed');
     var $container = $el.parent();
@@ -13,3 +18,5 @@ var imageElementHeight = function() {
     $el.height($container.height());
 
 };
+
+module.exports = new IEFix();
