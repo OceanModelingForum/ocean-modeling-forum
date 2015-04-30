@@ -36,9 +36,17 @@ return array(
     'public' => array(
 
         array(
+            'handle'        => 'modernizr',
+            'src'           => 'assets/dst/scripts/modernizr.js',
+            'deps'          => array(),
+            'ver'           => null,
+            'in_footer'     => false
+        ),
+
+        array(
             'handle'        => 'main',
             'src'           => 'assets/dst/scripts/main.js',
-            'deps'          => array('jquery'),
+            'deps'          => array('jquery', 'modernizr'),
             'ver'           => null,
             'in_footer'     => true
         ),

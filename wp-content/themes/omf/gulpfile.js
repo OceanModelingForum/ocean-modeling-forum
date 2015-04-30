@@ -9,6 +9,7 @@ var del             = require('del');
 var gulp            = require('gulp');
 var imagemin        = require('gulp-imagemin');
 var minify          = require('gulp-minify-css');
+var modernizr       = require('customizr');
 var notify          = require('gulp-notify');
 var pixrem          = require('gulp-pixrem');
 var rename          = require('gulp-rename');
@@ -119,11 +120,28 @@ gulp.task('scripts', function() {
 });
 
 /**
- * Minify custom Modernizr build
+ * Modernizr custom build
  */
-gulp.task('modernizr', function() {
-    return gulp.src(config.scripts.src + 'modernizr.js')
-        .pipe(gulp.dest(config.scripts.dst));
+gulp.task('modernizr', function(callback) {
+
+    var opts = {
+        cache: true,
+        dest: config.scripts.dst + 'modernizr.js',
+        files: {
+            src: [config.styles.src + '**/*.scss']
+        },
+        options: [
+            'setClasses',
+            'addTest',
+            'html5printshiv',
+            'testProp',
+            'fnBind'
+        ]
+    };
+
+    modernizr(opts, function() {
+        callback();
+    });
 });
 
 /**

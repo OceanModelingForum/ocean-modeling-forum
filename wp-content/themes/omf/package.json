@@ -2,6 +2,7 @@
   "devDependencies": {
     "browser-sync": "^1.5.2",
     "browserify": "^5.12.1",
+    "customizr": "^1.0.0-alpha",
     "del": "^1.1.1",
     "desandro-get-style-property": "^1.0.4",
     "elcontraption-component-grid": "^0.1.3",
