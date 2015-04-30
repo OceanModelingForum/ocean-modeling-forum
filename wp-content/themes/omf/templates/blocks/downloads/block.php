@@ -37,6 +37,8 @@ if ($background_color !== 'custom') $block_classes[] = 'Block--background-' . $b
  */
 $files = get_sub_field('files');
 
+$file_groups = array_chunk($files, 3);
+
 /**
  * Content fields.
  */
@@ -73,13 +75,13 @@ $text = get_sub_field('text');
 
             <div class="u-container">
 
-                <div class="Grid Grid--table Grid--collapsable u-table-layout-fixed">
+                <?php foreach ($file_groups as $file_group) : ?>
 
-                    <?php if ($files) : ?>
+                    <div class="Grid Grid--table Grid--collapsable u-table-layout-fixed">
 
-                        <?php foreach ($files as $file) : ?>
+                        <?php foreach ($file_group as $file) : ?>
 
-                            <div class="Grid-cell u-align--center">
+                            <div class="Grid-cell u-size-4of12 u-align--center">
 
                                 <?php include locate_template('templates/blocks/downloads/file.php'); ?>
 
@@ -87,9 +89,9 @@ $text = get_sub_field('text');
 
                         <?php endforeach; ?>
 
-                    <?php endif; ?>
+                    </div>
 
-                </div>
+                <?php endforeach; ?>
 
             </div>
 

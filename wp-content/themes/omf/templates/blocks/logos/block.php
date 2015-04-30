@@ -81,7 +81,7 @@ $logo_groups = array_chunk($logos, 3);
 
                         <?php foreach ($logo_group as $logo) : ?>
 
-                            <div class="Grid-cell u-align--center">
+                            <div class="Grid-cell u-size-4of12 u-align--center">
 
                                 <?php include locate_template('templates/blocks/logos/logo.php'); ?>
 
