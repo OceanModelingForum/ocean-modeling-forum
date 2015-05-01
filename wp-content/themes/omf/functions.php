@@ -61,12 +61,12 @@ Profiles::getInstance();
 |--------------------------------------------------------------------------
 */
 
-add_action('template_redirect', function()
-{
-    if (is_user_logged_in()) return;
-
-    if (is_page('coming-soon')) return;
-
-    wp_redirect(home_url('coming-soon'));
-    exit();
-});
+// add_action('template_redirect', function()
+// {
+//     if (is_user_logged_in()) return;
+//
+//     if (is_page('coming-soon')) return;
+//
+//     wp_redirect(home_url('coming-soon'));
+//     exit();
+// });
