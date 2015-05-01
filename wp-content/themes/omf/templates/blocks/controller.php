@@ -25,7 +25,7 @@ while (have_rows('content_blocks'))
 
     $title = ! empty($next_text) ? apply_filters('the_title', $next_text) : apply_filters('the_title', $title);
 
-    if ($last_id) $next_values[$last_id] = array(
+    if ($last_id && get_sub_field('show_next_arrow')) $next_values[$last_id] = array(
         'title' => $title,
         'id' => $id
     );
