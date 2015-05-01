@@ -99,6 +99,7 @@ class Profiles {
             // Insert contact column before date
             if ($key == 'date')
             {
+                $new_columns['professional_title'] = __('Professional Title');
                 $new_columns['organization'] = __('Organization');
             }
 
@@ -114,6 +115,7 @@ class Profiles {
      */
     public function makeProfileTableColumnsSortable($columns)
     {
+        $columns['professional_title'] = 'professional_title';
         $columns['organization'] = 'organization';
 
         return $columns;
@@ -129,6 +131,10 @@ class Profiles {
             case 'organization':
                 $organization = get_field('organization', $id);
                 echo $organization;
+                break;
+            case 'professional_title':
+                $title = get_field('title', $id);
+                echo $title;
                 break;
         }
     }
