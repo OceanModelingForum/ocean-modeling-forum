@@ -41,13 +41,13 @@ Menu.prototype.interactions = function() {
     /**
      * Selecting a menu item
      */
-    // this.$menu.find('a').one('tap', function(event) {
-    //     //event.preventDefault();
-    //
-    //     //var href = $(this).attr('href');
-    //
-    //     //_this.close(href);
-    // });
+    this.$menu.find('a').one('tap', function(event) {
+        event.preventDefault();
+
+        var href = $(this).attr('href');
+
+        _this.close(href);
+    });
 };
 
 /**
