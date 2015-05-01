@@ -21,12 +21,18 @@ if ($blocks)
     $first_block = $blocks[0];
 
     $first_block_title = apply_filters('the_title', $first_block['title']);
+    $first_block_next_text = apply_filters('the_title', $first_block['next_arrow_text']);
     $first_block_id = sanitize_title($first_block_title);
 
-    $next_block = array(
-        'title' => $first_block_title,
-        'id' => $first_block_id
-    );
+    if ( ! empty($first_block_next_text)) $first_block_title = $first_block_next_text;
+
+    if (get_field('show_next_arrow'))
+    {
+        $next_block = array(
+            'title' => $first_block_title,
+            'id' => $first_block_id
+        );
+    }
 }
 
 /**

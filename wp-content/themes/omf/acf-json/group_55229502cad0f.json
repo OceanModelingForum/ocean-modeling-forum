@@ -48,6 +48,23 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_5543b9abfcc2a",
+            "label": "Next arrow",
+            "name": "show_next_arrow",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Display \"next\" arrow to following block",
+            "default_value": 1
         }
     ],
     "location": [
@@ -67,5 +84,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428424783
+    "modified": 1430501827
 }
