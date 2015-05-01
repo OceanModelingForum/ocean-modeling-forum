@@ -25,9 +25,10 @@ Images.prototype.init = function() {
 Images.prototype.ieImageBleedFix = function() {
 
     // Only for IE9 and below
-    if ($('html').hasClass('gt-ie9')) {
-        return;
-    }
+    // Ugh, even IE11 can't do this.
+    //if ($('html').hasClass('gt-ie9')) {
+        //return;
+    //}
 
     var _this = this;
 
