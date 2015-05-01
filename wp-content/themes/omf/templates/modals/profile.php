@@ -6,61 +6,70 @@
 
 ?>
 
-<div class="u-container u-container--medium">
+<div class="Profile-modal">
 
-    <article class="Profile" data-modal-prevent-dismiss="yes">
+    <div class="Profile-modal-content">
 
-        <div class="Profile-inner" data-modal-prevent-dismiss="inner">
+        <div class="u-container u-container--medium">
 
-            <div class="Grid Grid--collapsable Grid--align-top">
+            <article class="Profile" data-modal-prevent-dismiss="yes">
 
-                <div class="Grid-cell u-size-4of12">
+                <div class="Profile-inner" data-modal-prevent-dismiss="inner">
 
-                    <?php if ($image) : ?>
+                    <div class="Grid Grid--collapsable Grid--align-top">
 
-                        <div class="Bio-card-image" style="background-image: url(<?php echo $image['sizes']['medium']; ?>);"></div>
+                        <div class="Grid-cell u-size-4of12">
 
-                    <?php endif; ?>
+                            <?php if ($image) : ?>
 
-                </div>
+                                <div class="Bio-card-image" style="background-image: url(<?php echo $image['sizes']['medium']; ?>);"></div>
 
-                <div class="Grid-cell u-size-8of12">
-
-                    <header class="Bio-card-header">
-
-                        <h3 class="Bio-card-name"><?php echo $name; ?></h3>
-
-                        <?php if ($title) : ?>
-
-                            <p class="Bio-card-title"><?php echo apply_filters('the_title', $title); ?></p>
-
-                        <?php endif; ?>
-
-                        <?php if ($organization) : ?>
-
-                            <p class="Bio-card-org"><?php echo apply_filters('the_title', $organization); ?></p>
-
-                        <?php endif; ?>
-
-                    </header>
-
-                    <?php if ($bio) : ?>
-
-                        <br>
-
-                        <div class="Bio-card-content">
-
-                            <?php echo apply_filters('the_content', $bio); ?>
+                            <?php endif; ?>
 
                         </div>
 
-                    <?php endif; ?>
+                        <div class="Grid-cell u-size-8of12">
+
+                            <header class="Bio-card-header">
+
+                                <h3 class="Bio-card-name"><?php echo $name; ?></h3>
+
+                                <?php if ($title) : ?>
+
+                                    <p class="Bio-card-title"><?php echo apply_filters('the_title', $title); ?></p>
+
+                                <?php endif; ?>
+
+                                <?php if ($organization) : ?>
+
+                                    <p class="Bio-card-org"><?php echo apply_filters('the_title', $organization); ?></p>
+
+                                <?php endif; ?>
+
+                            </header>
+
+                            <?php if ($bio) : ?>
+
+                                <br>
+
+                                <div class="Bio-card-content">
+
+                                    <?php echo apply_filters('the_content', $bio); ?>
+
+                                </div>
+
+                            <?php endif; ?>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
         </div>
+
 
     </div>
 

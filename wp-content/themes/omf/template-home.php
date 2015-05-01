@@ -6,6 +6,9 @@
  * Lay out content using ACF block type.
  */
 
+use OMF\Image;
+use OMF\Modal;
+
 get_header();
 
 /**
@@ -44,10 +47,24 @@ $banner = get_field('image');
 
 if (isset($banner['sizes'])) $banner_styles[] = 'background-image: url(' . $banner['sizes']['large'] . ');';
 
+// Create an image object for use in the modal
+// $image = new Image($banner['sizes']['large'], array(
+//     'caption' => $banner['caption'],
+// ));
+
 /**
  * Content fields.
  */
 $text = get_field('text');
+
+/**
+ * Create image modal
+ */
+// new Modal('test-modal-image', 'templates/images/modal', array(
+//     'image' => $image,
+// ), array(
+//     'container_class' => 'Modal Modal--zoom'
+// ));
 
 ?>
 
@@ -101,6 +118,23 @@ $text = get_field('text');
         </div>
 
     </div>
+
+    <?php if (isset($banner['caption']) && ! empty($banner['caption'])) : ?>
+
+        <div class="Image-caption">
+
+            <button class="Image-caption-button">
+                <svg class="Image-caption-button-icon Image-caption-button-icon--open"><use xlink:href="#icon-info"></use></svg>
+                <svg class="Image-caption-button-icon Image-caption-button-icon--close"><use xlink:href="#icon-cancel-circle"></use></svg>
+            </button>
+
+            <div class="Image-caption-content">
+                <?php echo $banner['caption']; ?>
+            </div>
+
+        </div>
+
+    <?php endif; ?>
 
 </section>
 

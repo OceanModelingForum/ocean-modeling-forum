@@ -1,6 +1,7 @@
 
 .Block {
     @extend .antialiased;
+    position: relative;
     display: table;
     width: 100%;
     overflow: hidden;

@@ -9,6 +9,7 @@
     }
 
     img {
+        display: block;
         @extend .visuallyhidden;
     }
 
@@ -54,15 +55,68 @@
 
 .Image-caption {
     position: absolute;
+    z-index: 200;
     right: 0;
     bottom: 0;
-    padding: 0.25rem;
-    @include font-size(13);
+    left: 0;
+}
+
+.Image-caption-button {
+    position: absolute;
+    z-index: 100;
+    right: 1rem;
+    bottom: 1rem;
+    border-radius: 50%;
+    outline: none !important;
+    background: rgba(0,0,0,0.25);
+
+    .Image-caption--active & {
+        background: none;
+    }
+
+    svg {
+        vertical-align: middle;
+        width: 1rem;
+        height: 1rem;
+        fill: #fff;
+        fill: rgba(255,255,255,0.75);
+    }
+}
+
+.Image-caption-content {
+    @extend .antialiased;
+    display: none;
+    padding: 1rem;
+    background: #000;
+    background: rgba(0,0,0,0.8);
+    @include font-size(16);
     color: #fff;
-    background: rgba(0,0,0,0.4);
-    text-align: right;
 
     a {
         color: #fff;
+    }
+
+    a:hover {
+        color: #fff !important;
+    }
+
+    .Image-caption--active & {
+        display: block;
+    }
+}
+
+.Image-caption-button-icon--open {
+    display: block;
+
+    .Image-caption--active & {
+        display: none;
+    }
+}
+
+.Image-caption-button-icon--close {
+    display: none;
+
+    .Image-caption--active & {
+        display: block;
     }
 }

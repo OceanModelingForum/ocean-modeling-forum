@@ -67,7 +67,7 @@ Modal.prototype.init = function() {
 
         var $el = $(event.target);
 
-        if ($(event.target).parents('[data-modal-prevent-dismiss]').length === 0) {
+        if ($el.parents('[data-modal-prevent-dismiss]').length === 0) {
             _this.toggle();
         }
 

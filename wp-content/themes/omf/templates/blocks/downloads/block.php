@@ -119,6 +119,8 @@ $text = get_sub_field('text');
 
                 </div>
 
+                <br>
+
             <?php endif; ?>
 
         </div>

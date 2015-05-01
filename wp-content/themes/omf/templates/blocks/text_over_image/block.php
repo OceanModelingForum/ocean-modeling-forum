@@ -149,4 +149,21 @@ if ($background_color !== 'custom') $block_classes[] = 'Block--background-' . $b
 
     </div>
 
+    <?php if (isset($image['caption']) && ! empty($image['caption'])) : ?>
+
+        <div class="Image-caption">
+
+            <button class="Image-caption-button">
+                <svg class="Image-caption-button-icon Image-caption-button-icon--open"><use xlink:href="#icon-info"></use></svg>
+                <svg class="Image-caption-button-icon Image-caption-button-icon--close"><use xlink:href="#icon-cancel-circle"></use></svg>
+            </button>
+
+            <div class="Image-caption-content">
+                <?php echo $image['caption']; ?>
+            </div>
+
+        </div>
+
+    <?php endif; ?>
+
 </section>

@@ -33,7 +33,10 @@ class Modal {
     /**
      * Create a new Modal instance
      *
-     * @param array $attributes
+     * @param string    $id             Unique ID for this modal
+     * @param string    $template       Path to template file, relative to theme
+     * @param array     $attributes     Attributes to pass directly to the modal template
+     * @param array     $options        Optional settings for the modal
      */
     public function __construct($id, $template, $attributes = array(), $options = array())
     {
@@ -69,11 +72,11 @@ class Modal {
 
                 <div class="<?php echo $this->options['content_class']; ?>">
 
-                    <div class="<?php echo $this->options['center_class']; ?>">
+                    <!-- <div class="<?php //echo $this->options['center_class']; ?>"> -->
 
                         <?php include locate_template($this->template . '.php'); ?>
 
-                    </div>
+                    <!-- </div> -->
 
                 </div>
 

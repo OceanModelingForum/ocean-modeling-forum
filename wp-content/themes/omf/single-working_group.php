@@ -113,6 +113,23 @@ $lede = get_field('lede');
 
     </div>
 
+    <?php if (isset($banner['caption']) && ! empty($banner['caption'])) : ?>
+
+        <div class="Image-caption">
+
+            <button class="Image-caption-button">
+                <svg class="Image-caption-button-icon Image-caption-button-icon--open"><use xlink:href="#icon-info"></use></svg>
+                <svg class="Image-caption-button-icon Image-caption-button-icon--close"><use xlink:href="#icon-cancel-circle"></use></svg>
+            </button>
+
+            <div class="Image-caption-content">
+                <?php echo $banner['caption']; ?>
+            </div>
+
+        </div>
+
+    <?php endif; ?>
+
 </section>
 
 <?php get_template_part('templates/blocks/controller'); ?>
