@@ -21,7 +21,11 @@
 
     <div class="Article-content">
 
-        <?php the_excerpt(); ?>
+        <div class="Entry">
+
+            <?php the_excerpt(); ?>
+
+        </div>
 
     </div>
 
