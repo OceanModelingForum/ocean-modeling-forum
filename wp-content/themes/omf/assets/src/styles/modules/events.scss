@@ -53,6 +53,39 @@
     line-height: 1;
     font-weight: 100;
 
+    a {
+        text-decoration: none;
+        color: #fff;
+
+        .Block--text-dark & {
+            color: $text;
+        }
+
+        /* &:hover {
+            color: #fff !important;
+
+            .Block--text-dark & {
+                color: $text !important;
+            }
+        } */
+
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: inherit;
+
+            .Block--text-light & {
+                fill: #fff;
+            }
+        }
+
+        &:hover svg {
+            fill: $link-active !important;
+        }
+    }
+
     @include bp-desktop {
         @include font-size(56);
     }

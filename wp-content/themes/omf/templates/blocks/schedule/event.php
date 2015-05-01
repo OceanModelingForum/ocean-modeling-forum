@@ -14,7 +14,25 @@
 
             <header class="Event-header">
 
-                <h3 class="Event-title"><?php echo apply_filters('the_title', $event['title']); ?></h3>
+                <h3 class="Event-title">
+
+                    <?php if (isset($event['link']) && ! empty($event['link'])) : ?>
+
+                        <a href="<?php echo get_permalink($event['link']); ?>">
+
+                    <?php endif; ?>
+
+                            <?php echo apply_filters('the_title', $event['title']); ?>
+
+                    <?php if (isset($event['link']) && ! empty($event['link'])) : ?>
+
+                            <svg><use xlink:href="#icon-chevron-right"></use></svg>
+
+                        </a>
+
+                    <?php endif; ?>
+
+                </h3>
 
             </header>
 

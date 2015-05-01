@@ -26,11 +26,17 @@
 }
 
 .Profile-header {
-    padding-left: 3rem;
+
+    @include bp-desktop {
+        padding-left: 3rem;
+    }
 }
 
 .Profile-content {
-    padding-left: 3rem;
+
+    @include bp-desktop {
+        padding-left: 3rem;
+    }
 }
 
 .Profile-modal {
@@ -42,5 +48,9 @@
 .Profile-modal-content {
     display: table-cell;
     vertical-align: middle;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
+
+    @include bp-desktop {
+        padding: 1rem;
+    }
 }
