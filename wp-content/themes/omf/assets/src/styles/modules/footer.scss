@@ -9,8 +9,11 @@
 .Footer-menu {
 
     li {
-        display: inline-block;
-        margin-right: 1rem;
+
+        @include bp-desktop {
+            display: inline-block;
+            margin-right: 1rem;    
+        }
     }
 
     a {

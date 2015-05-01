@@ -90,9 +90,18 @@ body.Menu--active {
 .Grid--padded {
     margin: 0 -1rem;
 
+    &.Grid--padded-vertical {
+        //margin-top:
+    }
+
     @include bp-desktop {
         margin: 0 -1rem;
     }
+}
+
+.Grid--padded-vertical {
+    margin-top: -1rem;
+    margin-bottom: -1rem;
 }
 
 .Grid--padded > .Grid-cell {
@@ -101,6 +110,11 @@ body.Menu--active {
     @include bp-desktop {
         padding: 0 1rem;
     }
+}
+
+.Grid--padded-vertical > .Grid-cell {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .Grid-cell--background {

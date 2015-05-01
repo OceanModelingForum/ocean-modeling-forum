@@ -79,7 +79,7 @@ $working_groups = $wg->all();
 
             <div class="u-container">
 
-                <div class="Grid Grid--collapsable Grid--padded">
+                <div class="Grid Grid--collapsable Grid--padded Grid--padded-vertical">
 
                     <?php while ($working_groups->have_posts()) : $working_groups->the_post(); ?>
 
