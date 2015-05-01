@@ -6,7 +6,7 @@
 
 use \OMF\Modal;
 
-$profile = $profile['profile'];
+$profile = get_post($profile['profile']);
 
 $profile_id = sanitize_title($profile->post_title);
 $image = get_field('image', $profile->ID);

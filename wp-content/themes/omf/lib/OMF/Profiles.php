@@ -37,6 +37,9 @@ class Profiles {
 
         // Add columns to admin table.
         $this->addAdminTableColumns();
+
+        // Populate profile select field
+        $this->populateProfileSelectField();
     }
 
     /**
@@ -128,6 +131,44 @@ class Profiles {
                 echo $organization;
                 break;
         }
+    }
+
+    protected function populateProfileSelectField()
+    {
+        add_filter('acf/load_field/name=profile', function($field)
+        {
+            // Reset choices
+            $field['choices'] = array();
+
+            $profiles = $this->all()->get_posts();
+
+            foreach ($profiles as $profile)
+            {
+                $title = get_field('title', $profile->ID);
+                $name = $profile->post_title;
+
+                if ($title)
+                {
+                    $name = $name . ' (' . $title . ')';
+                }
+
+                $field['choices'][$profile->ID] = $name;
+            }
+
+            return $field;
+        });
+    }
+
+    public function all()
+    {
+        $query = new WP_Query(array(
+            'post_type' => 'profile',
+            'posts_per_page' => -1,
+            'orderby' => 'post_title',
+            'order' => 'ASC'
+        ));
+
+        return $query;
     }
 
 }

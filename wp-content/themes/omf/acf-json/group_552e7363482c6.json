@@ -2484,7 +2484,7 @@
                                     "label": "Profile",
                                     "name": "profile",
                                     "prefix": "",
-                                    "type": "post_object",
+                                    "type": "select",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -2493,14 +2493,19 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "post_type": [
-                                        "profile"
-                                    ],
-                                    "taxonomy": "",
+                                    "choices": {
+                                        "": ""
+                                    },
+                                    "default_value": {
+                                        "": ""
+                                    },
                                     "allow_null": 0,
                                     "multiple": 0,
-                                    "return_format": "object",
-                                    "ui": 1
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "disabled": 0,
+                                    "readonly": 0
                                 }
                             ]
                         }
@@ -2542,5 +2547,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1430500680
+    "modified": 1430512281
 }
