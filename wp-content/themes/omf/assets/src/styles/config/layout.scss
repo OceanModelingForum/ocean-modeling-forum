@@ -190,3 +190,18 @@ $box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
 .u-table-layout-fixed {
     table-layout: fixed;
 }
+
+.browsehappy {
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    background: red;
+    color: #fff;
+
+    a {
+        color: #fff;
+    }
+}

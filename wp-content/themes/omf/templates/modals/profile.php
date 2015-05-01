@@ -8,6 +8,10 @@
 
 <div class="Profile-modal">
 
+    <button class="Modal-close-button" data-modal-dismiss>
+        <svg><use xlink:href="#icon-cancel-circle"></use></svg>
+    </button>
+
     <div class="Profile-modal-content">
 
         <div class="u-container u-container--medium">

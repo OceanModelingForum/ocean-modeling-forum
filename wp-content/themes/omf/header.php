@@ -8,6 +8,8 @@
     <?php get_template_part('templates/header/head'); ?>
 
 <body>
+    
+    <?php get_template_part('templates/utility/upgrade'); ?>
 
     <?php get_template_part('assets/src/icons/icomoon/svgdefs.svg'); ?>
 
