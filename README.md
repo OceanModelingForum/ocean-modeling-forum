@@ -4,6 +4,7 @@ The Ocean Modeling Forum website.
 Author: [Darin Reid](http://elcontraption.com/)
 
 1. [Development](#development)
+2. [Deployment](#deployment)
 
 ## Development
 
@@ -33,4 +34,4 @@ gulp
 ```
 
 ## Deployment
-//...
+Deployment is handled with [Laravel Envoy](http://laravel.com/docs/5.0/envoy). See config settings under `production` in `env.php`.
