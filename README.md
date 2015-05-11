@@ -17,7 +17,7 @@ Make a copy of `env-example.php` and update the variables within to match your l
 cp env-example.php env.php
 ```
 
-** Important**: Make sure you generate new WordPress auth keys within that file.
+**Important**: Make sure you generate new WordPress auth keys within that file.
 
 ### 3. Install theme dependencies
 
