@@ -19,6 +19,7 @@ env.php
 *.log
 _notes
 .env
+envoy-config.php
 
 # wordpress specific
 .htaccess
