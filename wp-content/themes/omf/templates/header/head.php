@@ -9,4 +9,6 @@
 
     <script src="//use.typekit.net/ycr5cje.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
+
+    <?php if (is_singular()) wp_enqueue_script('comment-reply'); ?>
 </head>

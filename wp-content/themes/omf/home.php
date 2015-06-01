@@ -6,7 +6,7 @@
 
 get_header();
 
-get_template_part('templates/news/banner');
+get_template_part('templates/posts/banner');
 
 ?>
 
@@ -22,7 +22,7 @@ get_template_part('templates/news/banner');
 
                     <?php while (have_posts()) : the_post(); ?>
 
-                        <?php get_template_part('templates/news/excerpt'); ?>
+                        <?php get_template_part('templates/posts/excerpt'); ?>
 
                     <?php endwhile; ?>
 

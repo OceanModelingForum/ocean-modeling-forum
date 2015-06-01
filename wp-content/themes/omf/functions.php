@@ -32,6 +32,7 @@ $includes = array(
     'lib/files.php',
     'lib/widgets.php',
     'lib/posts.php',
+    'lib/comments.php',
 );
 
 foreach ($includes as $include)

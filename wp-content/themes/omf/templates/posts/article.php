@@ -29,4 +29,10 @@
 
     </div>
 
+    <footer class="Article-footer">
+
+        <?php comments_template() ?>
+
+    </footer>
+
 </article>

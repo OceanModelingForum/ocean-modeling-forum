@@ -8,7 +8,7 @@ get_header();
 
 ?>
 
-<?php get_template_part('templates/news/banner'); ?>
+<?php get_template_part('templates/posts/banner'); ?>
 
 <div class="Page" role="main">
 
@@ -22,7 +22,7 @@ get_header();
 
                     <?php while (have_posts()) : the_post(); ?>
 
-                        <?php get_template_part('templates/news/article'); ?>
+                        <?php get_template_part('templates/posts/article'); ?>
 
                     <?php endwhile; ?>
 
