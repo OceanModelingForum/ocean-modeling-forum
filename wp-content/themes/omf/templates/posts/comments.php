@@ -48,6 +48,7 @@ if ( post_password_required() ) {
             <?php if ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
                 <div class="Alert Alert--warning">
+                    <br>
                     <?php _e('Comments are closed.', 'expeditionaryart') ?>
                 </div>
 
@@ -61,17 +62,17 @@ if ( post_password_required() ) {
 
 <?php if ( ! have_comments() && ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
-    <section class="Comments">
+    <!-- <section class="Comments">
 
         <div class="Comments-content">
 
             <div class="Alert Alert--warning">
-                <?php _e('Comments are closed.', 'expeditionaryart') ?>
+                <?php // _e('Comments are closed.', 'expeditionaryart') ?>
             </div>
 
         </div>
 
-    </section>
+    </section> -->
 
 <?php endif ?>
 
