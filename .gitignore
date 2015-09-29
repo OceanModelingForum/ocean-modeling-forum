@@ -22,7 +22,6 @@ _notes
 envoy-config.php
 deploy.php
 .vagrant
-._vagrant
 
 # wordpress specific
 .htaccess
