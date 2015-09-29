@@ -1,13 +1,17 @@
 
 @setup
 
+    date_default_timezone_set('America/Los_Angeles');
+
     /**
      * Define deployment environments
      *
      * Default is the first setting in this array.
      */
     $environments = [
-        'deploy' => include('envoy-config.php'),
+        'deploy'        => include('deploy.php'),
+        //'staging'       => include('staging.php'),
+        //'production'    => include('production.php'),
     ];
 
     /**
@@ -56,6 +60,7 @@
     update_permissions
     symlink_new_release
     symlink_shared_assets
+    create_custom_symlinks
     remove_old_releases
 @endmacro
 
@@ -66,7 +71,7 @@
     find . -maxdepth 1 -type d -name '2*' | sort -r | head -n2 | tail -n1 | cut -c 3- | xargs -I '{}' ln -nfs {{ $releases_dir }}/'{}' {{ $app_symlink }};
 
     # Remove newest release
-    ls -1d * | sort -r | head -n1 | xargs -d '\n' rm -Rf;
+    find . -maxdepth 1 -type d -name '2*' | sort -r | head -n1 | xargs -d '\n' rm -Rf;
 
     echo "Rolled back to previous release";
 @endtask
@@ -82,6 +87,7 @@
     @if ( ! empty($composer_exec))
         cd {{ $releases_dir }}/{{ $release }}/{{ $scripts_dir }};
         {{ $composer_exec }} install --prefer-dist --no-interaction --no-dev;
+        echo 'Composer updated dependencies.';
     @else
         echo '';
     @endif
@@ -89,13 +95,11 @@
 
 @task('update_permissions')
     cd {{ $releases_dir }};
-    {{-- chgrp -R www-data {{ $release }}; --}}
     chmod -R ug+rwx {{ $release }};
 @endtask
 
 @task('symlink_new_release')
     ln -nfs {{ $releases_dir }}/{{ $release }} {{ $app_symlink }};
-    {{-- chgrp -h www-data {{ $app_symlink }}; --}}
 @endtask
 
 @task('symlink_shared_assets')
@@ -103,12 +107,24 @@
     @foreach($shared as $asset)
         rm -rf {{ $releases_dir }}/{{ $release }}/{{ $asset }};
         ln -nfs {{ $shared_dir }}/{{ $asset }} {{ $releases_dir }}/{{ $release }}/{{ $asset }};
-        {{-- chgrp -h www-data {{ $releases_dir }}/{{ $release }}/{{ $asset }}; --}}
     @endforeach
 @endtask
 
-@task('update_wp_super_cache')
-    echo '';
+@task('create_custom_symlinks')
+    @if ( ! empty($symlinks))
+        @foreach($symlinks as $key => $value)
+
+            <?php  
+            $last_part = substr($key, strrpos($key, '/'));
+            $key = str_replace($last_part, '', $key);
+            ?>
+
+            [ -d {{ $releases_dir }}/{{ $release }}/{{ $key }} ] || mkdir {{ $releases_dir }}/{{ $release }}/{{ $key }};
+            ln -nfs {{ $value }} {{ $releases_dir }}/{{ $release }}/{{ $key }}{{ $last_part }};
+        @endforeach
+    @else
+        echo '';
+    @endif
 @endtask
 
 @task('remove_old_releases')

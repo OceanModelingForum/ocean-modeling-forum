@@ -20,10 +20,12 @@ env.php
 _notes
 .env
 envoy-config.php
+deploy.php
 
 # wordpress specific
 .htaccess
 wp-content/uploads/
+wp-content/plugins/
 wp-content/blogs.dir/
 wp-content/upgrade/*
 wp-content/backup-db/*
