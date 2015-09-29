@@ -6,7 +6,6 @@
             "key": "field_55230491c2c38",
             "label": "Image",
             "name": "image",
-            "prefix": "",
             "type": "image",
             "instructions": "",
             "required": 1,
@@ -42,6 +41,13 @@
                 "operator": "==",
                 "value": "template-blocks.php"
             }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "11"
+            }
         ]
     ],
     "menu_order": -10,
@@ -50,5 +56,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1428425200
+    "active": 1,
+    "description": "",
+    "modified": 1443563447
 }

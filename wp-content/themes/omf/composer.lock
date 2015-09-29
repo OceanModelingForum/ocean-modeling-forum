@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "hash": "4c49afbf51eb24c2402e81f47d3f20c7",
@@ -46,16 +46,16 @@
         },
         {
             "name": "elcontraption/wp-theme-config",
-            "version": "0.2.4",
+            "version": "0.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elcontraption/wp-theme-config.git",
-                "reference": "aa95e264321ced3ce7be27abcb77353a556404d8"
+                "reference": "222822b0b2f959430862d6fe680cc0ae084b31b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elcontraption/wp-theme-config/zipball/aa95e264321ced3ce7be27abcb77353a556404d8",
-                "reference": "aa95e264321ced3ce7be27abcb77353a556404d8",
+                "url": "https://api.github.com/repos/elcontraption/wp-theme-config/zipball/222822b0b2f959430862d6fe680cc0ae084b31b7",
+                "reference": "222822b0b2f959430862d6fe680cc0ae084b31b7",
                 "shasum": ""
             },
             "require": {
@@ -83,7 +83,7 @@
                 }
             ],
             "description": "Sensible default settings and intelligent overrides for theming WordPress.",
-            "time": "2015-03-24 18:25:43"
+            "time": "2015-06-24 22:26:26"
         }
     ],
     "packages-dev": [],
