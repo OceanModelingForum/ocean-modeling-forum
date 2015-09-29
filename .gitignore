@@ -21,11 +21,13 @@ _notes
 .env
 envoy-config.php
 deploy.php
+.vagrant
 
 # wordpress specific
 .htaccess
 wp-content/uploads/
 wp-content/plugins/
+wp-content/_plugins/
 wp-content/blogs.dir/
 wp-content/upgrade/*
 wp-content/backup-db/*
