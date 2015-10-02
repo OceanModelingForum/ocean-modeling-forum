@@ -16,7 +16,7 @@ get_header();
 
         <div class="Grid Grid--padded Grid--collapsable">
 
-            <div class="Grid-cell u-size-8of12">
+            <div class="Grid-cell u-size-10of12">
 
                 <?php if (have_posts()) : ?>
 
@@ -34,7 +34,7 @@ get_header();
 
             </div>
 
-            <div class="Grid-cell u-size-4of12">
+            <div class="Grid-cell u-size-2of12">
 
                 <?php get_sidebar(); ?>
 

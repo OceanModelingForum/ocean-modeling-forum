@@ -8,6 +8,6 @@
 
 get_header();
 
-get_template_part('templates/blocks/repeater');
+get_template_part('templates/blocks/controller');
 
 get_footer();
